@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Compliance Dashboard | CompliTech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 900: '#0B132B', 800: '#1C2541', 700: '#2A3B5C' },
+                        accent: { blue: '#3A86FF', emerald: '#06D6A0' },
+                        dark: '#121212', light: '#F8F9FA'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        .sidebar-link.active {
+            background-color: rgba(58, 134, 255, 0.1);
+            color: #3A86FF;
+            font-weight: 600;
+        }
+        .dark .sidebar-link.active {
+            background-color: rgba(58, 134, 255, 0.2);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-[#F3F4F6] dark:bg-dark text-gray-800 dark:text-gray-200 transition-colors duration-300 overflow-hidden">
+
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="w-20 lg:w-72 bg-white dark:bg-navy-900 border-e border-gray-200 dark:border-gray-800 flex flex-col transition-all duration-300 z-50">
+            <a href="index.html" class="p-4 lg:p-6 flex items-center justify-center lg:justify-start gap-3 hover:opacity-80 transition-opacity">
+                <div class="w-10 h-10 rounded-xl bg-gradient-accent flex items-center justify-center text-white font-bold text-xl shadow-lg shrink-0">C</div>
+                <span class="font-heading font-bold text-xl tracking-tight dark:text-white hidden lg:block">CompliTech <span class="text-[10px] bg-accent-blue/10 text-accent-blue px-2 py-0.5 rounded ms-1">Enterprise</span></span>
+            </a>
+
+            <nav class="flex-1 px-2 lg:px-4 space-y-1 mt-4">
+                <button onclick="showTab('overview', this)" class="sidebar-link active w-full flex items-center justify-center lg:justify-start lg:gap-4 py-3 rounded-xl text-gray-500 hover:bg-gray-100 dark:hover:bg-navy-800 transition-all group">
+                    <span class="w-10 h-10 flex items-center justify-center shrink-0">
+                        <i class="fas fa-chart-pie text-lg"></i>
+                    </span>
+                    <span class="hidden lg:block text-sm text-left">System Overview</span>
+                </button>
+                <button onclick="showTab('workflows', this)" class="sidebar-link w-full flex items-center justify-center lg:justify-start lg:gap-4 py-3 rounded-xl text-gray-500 hover:bg-gray-100 dark:hover:bg-navy-800 transition-all group">
+                    <span class="w-10 h-10 flex items-center justify-center shrink-0">
+                        <i class="fas fa-project-diagram text-lg"></i>
+                    </span>
+                    <span class="hidden lg:block text-sm text-left">KYC/AML Workflows</span>
+                </button>
+                <button onclick="showTab('monitoring', this)" class="sidebar-link w-full flex items-center justify-center lg:justify-start lg:gap-4 py-3 rounded-xl text-gray-500 hover:bg-gray-100 dark:hover:bg-navy-800 transition-all group">
+                    <span class="w-10 h-10 flex items-center justify-center shrink-0">
+                        <i class="fas fa-microscope text-lg"></i>
+                    </span>
+                    <span class="hidden lg:block text-sm text-left">Transaction Monitoring</span>
+                </button>
+                <button onclick="showTab('regulatory', this)" class="sidebar-link w-full flex items-center justify-center lg:justify-start lg:gap-4 py-3 rounded-xl text-gray-500 hover:bg-gray-100 dark:hover:bg-navy-800 transition-all group relative">
+                    <span class="w-10 h-10 flex items-center justify-center shrink-0">
+                        <i class="fas fa-gavel text-lg"></i>
+                    </span>
+                    <span class="hidden lg:block text-sm text-left">Regulatory Changes</span>
+                    <span class="absolute top-3 end-4 w-5 h-5 bg-red-500 text-white text-[10px] flex items-center justify-center rounded-full hidden lg:flex font-bold">3</span>
+                </button>
+                <button onclick="showTab('audit', this)" class="sidebar-link w-full flex items-center justify-center lg:justify-start lg:gap-4 py-3 rounded-xl text-gray-500 hover:bg-gray-100 dark:hover:bg-navy-800 transition-all group">
+                    <span class="w-10 h-10 flex items-center justify-center shrink-0">
+                        <i class="fas fa-history text-lg"></i>
+                    </span>
+                    <span class="hidden lg:block text-sm text-left">Immutable Audit Trails</span>
+                </button>
+                
+                <div class="pt-8 pb-2 hidden lg:block"><span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest px-4">Compliance Tools</span></div>
+                
+                <button onclick="showTab('sar', this)" class="sidebar-link w-full flex items-center justify-center lg:justify-start lg:gap-4 py-3 rounded-xl text-gray-500 hover:bg-gray-100 dark:hover:bg-navy-800 transition-all group">
+                    <span class="w-10 h-10 flex items-center justify-center shrink-0">
+                        <i class="fas fa-file-medical-alt text-lg"></i>
+                    </span>
+                    <span class="hidden lg:block text-sm text-left">SAR Reporting</span>
+                </button>
+                <button onclick="showTab('config', this)" class="sidebar-link w-full flex items-center justify-center lg:justify-start lg:gap-4 py-3 rounded-xl text-gray-500 hover:bg-gray-100 dark:hover:bg-navy-800 transition-all group">
+                    <span class="w-10 h-10 flex items-center justify-center shrink-0">
+                        <i class="fas fa-shield-alt text-lg"></i>
+                    </span>
+                    <span class="hidden lg:block text-sm text-left">Risk Engine Config</span>
+                </button>
+            </nav>
+
+            <div class="p-4 border-t border-gray-200 dark:border-gray-800 space-y-2">
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-gray-50 dark:bg-navy-800">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-accent-blue to-accent-emerald p-0.5">
+                        <div class="w-full h-full rounded-full bg-white dark:bg-navy-900 flex items-center justify-center overflow-hidden text-gray-400">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                    </div>
+                    <div class="hidden lg:block flex-1">
+                        <div class="text-xs font-bold dark:text-white">Alex Morgan</div>
+                        <div class="text-[10px] text-gray-500 font-medium">Compliance Director</div>
+                    </div>
+                </div>
+                <a href="login.html" class="w-full flex items-center gap-4 px-4 py-3 rounded-xl text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 transition-all group">
+                    <i class="fas fa-sign-out-alt text-lg"></i>
+                    <span class="hidden lg:block text-sm font-bold">Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col overflow-hidden">
+            <!-- Top Navbar -->
+            <header class="h-20 bg-white dark:bg-navy-900 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between px-4 md:px-8 shrink-0">
+                <div class="flex items-center gap-4 md:gap-6 overflow-hidden">
+                    <h2 id="current-tab-title" class="text-lg md:text-xl font-heading font-bold dark:text-white text-gradient truncate">System Overview</h2>
+                    <div class="hidden lg:flex items-center gap-4 px-4 py-1.5 bg-gray-100 dark:bg-navy-800 rounded-full text-[11px] font-bold shrink-0">
+                        <div class="flex items-center gap-2 text-green-600 dark:text-green-400">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span> KYC Node: Stable
+                        </div>
+                        <div class="w-px h-3 bg-gray-300 dark:bg-gray-700"></div>
+                        <div class="flex items-center gap-2 text-blue-600 dark:text-blue-400">
+                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span> AML API: 12ms
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2 md:gap-6">
+                    <button id="rtl-toggle-tablet" class="w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center font-bold text-[10px] md:text-xs hover:bg-gray-100 dark:hover:bg-navy-800 transition-colors" title="Toggle RTL">
+                        <span id="rtl-icon-tablet">RTL</span>
+                    </button>
+                    <button id="theme-toggle-tablet" class="w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center hover:bg-gray-100 dark:hover:bg-navy-800 transition-colors">
+                        <i id="theme-icon-tablet" class="fas fa-moon text-base md:text-lg"></i>
+                    </button>
+                    <div class="relative hidden sm:block">
+                        <button class="px-4 py-2 bg-navy-900 dark:bg-white text-white dark:text-navy-900 rounded-lg text-xs font-bold flex items-center gap-2 shadow-lg shadow-blue-900/10 whitespace-nowrap">
+                            <i class="fas fa-plus"></i> <span class="hidden md:inline">New Investigation</span>
+                        </button>
+                    </div>
+                    <a href="login.html" class="w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors" title="Logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                </div>
+            </header>
+
+            <!-- Dashboard Content Scroll Area -->
+            <div id="content-area" class="flex-1 overflow-y-auto p-4 md:p-8 bg-[#F9FAFB] dark:bg-[#0F172A]">
+                
+                <!-- TAB: SYSTEM OVERVIEW -->
+                <div id="tab-overview" class="tab-content active animate-fade-in">
+                    <!-- Metrics -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+                        <div class="bg-white dark:bg-navy-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/30 text-accent-blue flex items-center justify-center text-xl"><i class="fas fa-project-diagram"></i></div>
+                                <span class="text-[10px] font-bold text-gray-400 uppercase">Workflow Health</span>
+                            </div>
+                            <div class="text-2xl font-extrabold dark:text-white">99.2% <span class="text-xs text-green-500 ms-1 font-bold">Optimal</span></div>
+                            <p class="text-[11px] text-gray-500 mt-2">Active KYC/AML pipelines</p>
+                        </div>
+                        <div class="bg-white dark:bg-navy-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 text-accent-emerald flex items-center justify-center text-xl"><i class="fas fa-chart-bar"></i></div>
+                                <span class="text-[10px] font-bold text-gray-400 uppercase">Monitoring Coverage</span>
+                            </div>
+                            <div class="text-2xl font-extrabold dark:text-white">2.4M <span class="text-xs text-gray-400 ms-1 font-normal">Events/hr</span></div>
+                            <p class="text-[11px] text-gray-500 mt-2">Live transaction scanning</p>
+                        </div>
+                        <div class="bg-white dark:bg-navy-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-900/30 text-red-500 flex items-center justify-center text-xl"><i class="fas fa-bell"></i></div>
+                                <span class="text-[10px] font-bold text-gray-400 uppercase">Alert Density</span>
+                            </div>
+                            <div class="text-2xl font-extrabold dark:text-white">14 <span class="text-xs text-red-500 ms-1 font-bold">Action Needed</span></div>
+                            <p class="text-[11px] text-gray-500 mt-2">High-risk flags detected</p>
+                        </div>
+                        <div class="bg-white dark:bg-navy-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-900/30 text-purple-500 flex items-center justify-center text-xl"><i class="fas fa-fingerprint"></i></div>
+                                <span class="text-[10px] font-bold text-gray-400 uppercase">Audit Integrity</span>
+                            </div>
+                            <div class="text-2xl font-extrabold dark:text-white">Verified <span class="text-xs text-purple-500 ms-1 font-bold">SHA-256</span></div>
+                            <p class="text-[11px] text-gray-500 mt-2">Immutable trail status</p>
+                        </div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div class="bg-white dark:bg-navy-900 p-6 md:p-8 rounded-3xl border border-gray-100 dark:border-gray-800">
+                            <h3 class="font-bold mb-6 dark:text-white">System Performance</h3>
+                            <div class="h-64 bg-gray-50 dark:bg-navy-800/50 rounded-2xl border border-dashed border-gray-200 dark:border-gray-700 flex items-center justify-center relative overflow-hidden">
+                                <svg class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                    <path d="M0,150 L50,130 L100,160 L150,110 L200,140 L250,90 L300,120 L350,70 L400,100 L450,50 L500,80 L550,40 L600,70 L650,30 L700,60 L750,20 L800,50" fill="none" stroke="#3A86FF" stroke-width="3" stroke-linecap="round"></path>
+                                </svg>
+                                <span class="text-xs font-bold text-gray-400 z-10">Live Verification Traffic</span>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-navy-900 p-6 md:p-8 rounded-3xl border border-gray-100 dark:border-gray-800">
+                            <h3 class="font-bold mb-6 dark:text-white">Geographic Risk Distribution</h3>
+                            <div class="h-64 bg-gray-50 dark:bg-navy-800/50 rounded-2xl border border-dashed border-gray-200 dark:border-gray-700 flex flex-col items-center justify-center p-6">
+                                <div class="w-full flex justify-between text-[10px] font-bold text-gray-400 uppercase mb-2"><span>Region</span><span>Risk Level</span></div>
+                                <div class="w-full space-y-4">
+                                    <div class="flex items-center gap-4"><span class="w-20 text-xs font-semibold">North America</span><div class="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden"><div class="w-[15%] h-full bg-green-500"></div></div><span class="text-xs font-bold">Low</span></div>
+                                    <div class="flex items-center gap-4"><span class="w-20 text-xs font-semibold">Western Europe</span><div class="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden"><div class="w-[25%] h-full bg-green-500"></div></div><span class="text-xs font-bold">Low</span></div>
+                                    <div class="flex items-center gap-4"><span class="w-20 text-xs font-semibold">Southeast Asia</span><div class="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden"><div class="w-[65%] h-full bg-orange-500"></div></div><span class="text-xs font-bold">Medium</span></div>
+                                    <div class="flex items-center gap-4"><span class="w-20 text-xs font-semibold">Eastern Europe</span><div class="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden"><div class="w-[85%] h-full bg-red-500"></div></div><span class="text-xs font-bold">High</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB: KYC/AML WORKFLOWS -->
+                <div id="tab-workflows" class="tab-content animate-fade-in">
+                    <div class="bg-white dark:bg-navy-900 p-6 md:p-8 rounded-3xl border border-gray-100 dark:border-gray-800 mb-8">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+                            <div>
+                                <h3 class="font-bold text-lg dark:text-white">Workflow Orchestration</h3>
+                                <p class="text-xs text-gray-500">Manage and deploy automated compliance rulesets</p>
+                            </div>
+                            <button class="w-full sm:w-auto bg-accent-blue text-white px-4 py-2 rounded-lg text-xs font-bold shadow-lg shadow-blue-500/20 whitespace-nowrap"><i class="fas fa-plus me-2"></i> Create New Workflow</button>
+                        </div>
+
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <!-- Workflow Card 1 -->
+                            <div class="p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-all group bg-gray-50 dark:bg-navy-800/30">
+                                <div class="flex justify-between mb-4">
+                                    <span class="px-2 py-1 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 text-[10px] font-bold rounded uppercase">Active</span>
+                                    <i class="fas fa-ellipsis-h text-gray-400"></i>
+                                </div>
+                                <h4 class="font-bold mb-1 dark:text-white">Standard Onboarding</h4>
+                                <p class="text-xs text-gray-500 mb-6">Tier 1 users, global coverage</p>
+                                <div class="flex items-center justify-between text-[10px] font-bold text-gray-400 mb-2"><span>Pass Rate</span><span>94.2%</span></div>
+                                <div class="w-full h-1.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden"><div class="w-[94%] h-full bg-green-500"></div></div>
+                                <div class="mt-6 flex gap-2">
+                                    <button class="flex-1 py-2 text-[10px] font-bold bg-white dark:bg-navy-900 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50">View Details</button>
+                                    <button class="w-10 h-10 flex items-center justify-center border border-gray-200 dark:border-gray-700 rounded-lg text-gray-400 hover:text-accent-blue"><i class="fas fa-play"></i></button>
+                                </div>
+                            </div>
+                            <!-- Workflow Card 2 -->
+                            <div class="p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-all group bg-gray-50 dark:bg-navy-800/30">
+                                <div class="flex justify-between mb-4">
+                                    <span class="px-2 py-1 bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 text-[10px] font-bold rounded uppercase">Drafting</span>
+                                    <i class="fas fa-ellipsis-h text-gray-400"></i>
+                                </div>
+                                <h4 class="font-bold mb-1 dark:text-white">Institutional Vetting</h4>
+                                <p class="text-xs text-gray-500 mb-6">Complex corporate structures</p>
+                                <div class="flex items-center justify-between text-[10px] font-bold text-gray-400 mb-2"><span>Est. Review Time</span><span>12h</span></div>
+                                <div class="w-full h-1.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden"><div class="w-[40%] h-full bg-blue-500"></div></div>
+                                <div class="mt-6 flex gap-2">
+                                    <button class="flex-1 py-2 text-[10px] font-bold bg-white dark:bg-navy-900 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50">Edit Builder</button>
+                                    <button class="w-10 h-10 flex items-center justify-center border border-gray-200 dark:border-gray-700 rounded-lg text-gray-400 hover:text-accent-blue"><i class="fas fa-save"></i></button>
+                                </div>
+                            </div>
+                            <!-- Workflow Card 3 -->
+                            <div class="p-6 rounded-2xl border border-accent-blue/30 bg-accent-blue/5 shadow-sm">
+                                <div class="flex justify-between mb-4">
+                                    <span class="px-2 py-1 bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 text-[10px] font-bold rounded uppercase">Flagged</span>
+                                    <i class="fas fa-exclamation-triangle text-red-500 animate-pulse"></i>
+                                </div>
+                                <h4 class="font-bold mb-1 dark:text-white">High-Risk Corridor</h4>
+                                <p class="text-xs text-gray-500 mb-6">Cross-border transfers > $10k</p>
+                                <div class="flex items-center justify-between text-[10px] font-bold text-gray-400 mb-2"><span>Manual Review %</span><span>65.0%</span></div>
+                                <div class="w-full h-1.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden"><div class="w-[65%] h-full bg-red-500"></div></div>
+                                <div class="mt-6 flex gap-2">
+                                    <button class="flex-1 py-2 text-[10px] font-bold bg-accent-blue text-white rounded-lg hover:bg-blue-600">Review Flags</button>
+                                    <button class="w-10 h-10 flex items-center justify-center border border-accent-blue/20 rounded-lg text-accent-blue hover:bg-white"><i class="fas fa-pause"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB: TRANSACTION MONITORING -->
+                <div id="tab-monitoring" class="tab-content animate-fade-in">
+                    <div class="grid lg:grid-cols-12 gap-8">
+                        <div class="lg:col-span-8 bg-white dark:bg-navy-900 rounded-3xl border border-gray-100 dark:border-gray-800 overflow-hidden">
+                            <div class="p-6 md:p-8 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center">
+                                <h3 class="font-bold text-lg dark:text-white">Real-Time Event Stream</h3>
+                                <div class="flex items-center gap-2 text-[10px] font-bold text-green-500"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Live Processing</div>
+                            </div>
+                            <div class="max-h-[500px] overflow-x-auto">
+                                <table class="w-full text-left">
+                                    <thead class="bg-gray-50 dark:bg-navy-800/50 text-[10px] uppercase tracking-widest text-gray-500 font-bold sticky top-0 z-10">
+                                        <tr><th class="px-8 py-4">Timestamp</th><th class="px-8 py-4">Event Type</th><th class="px-8 py-4">Entity</th><th class="px-8 py-4">Amount</th><th class="px-8 py-4">Score</th></tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-100 dark:divide-gray-800 text-[11px] font-medium">
+                                        <tr class="hover:bg-gray-50 transition-colors"><td class="px-8 py-4 text-gray-400">06:28:44</td><td class="px-8 py-4">Transfer_Out</td><td class="px-8 py-4 font-bold">#U-9211</td><td class="px-8 py-4">$1,250.00</td><td class="px-8 py-4 text-green-500">12/100</td></tr>
+                                        <tr class="hover:bg-orange-50/30 transition-colors"><td class="px-8 py-4 text-gray-400">06:27:12</td><td class="px-8 py-4">Deposit_Int</td><td class="px-8 py-4 font-bold">#U-8821</td><td class="px-8 py-4">$15,000.00</td><td class="px-8 py-4 text-orange-500">54/100</td></tr>
+                                        <tr class="hover:bg-gray-50 transition-colors"><td class="px-8 py-4 text-gray-400">06:25:55</td><td class="px-8 py-4">Transfer_Out</td><td class="px-8 py-4 font-bold">#U-1120</td><td class="px-8 py-4">$450.00</td><td class="px-8 py-4 text-green-500">04/100</td></tr>
+                                        <tr class="hover:bg-red-50/30 transition-colors"><td class="px-8 py-4 text-gray-400">06:24:02</td><td class="px-8 py-4">Velocity_Alert</td><td class="px-8 py-4 font-bold">#U-7721</td><td class="px-8 py-4">$4,200.00</td><td class="px-8 py-4 text-red-500">88/100</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-4 space-y-8">
+                            <div class="bg-navy-900 text-white p-8 rounded-3xl shadow-xl">
+                                <h3 class="font-bold mb-6">Velocity Settings</h3>
+                                <div class="space-y-6">
+                                    <div><label class="text-[10px] font-bold text-gray-400 uppercase block mb-2">Max Daily Cumulative</label><input type="range" class="w-full accent-accent-blue" value="80"><div class="flex justify-between text-xs mt-1"><span>$5,000</span><span>$50,000</span></div></div>
+                                    <div><label class="text-[10px] font-bold text-gray-400 uppercase block mb-2">Burst Frequency (Trans/min)</label><div class="flex gap-2"><button class="flex-1 py-2 bg-white/10 rounded-lg text-xs font-bold border border-white/20">5</button><button class="flex-1 py-2 bg-accent-blue rounded-lg text-xs font-bold border border-white/20">10</button><button class="flex-1 py-2 bg-white/10 rounded-lg text-xs font-bold border border-white/20">25</button></div></div>
+                                    <button class="w-full py-3 bg-white text-navy-900 rounded-xl font-bold text-sm mt-4">Save Parameters</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB: REGULATORY CHANGES -->
+                <div id="tab-regulatory" class="tab-content animate-fade-in">
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div class="bg-white dark:bg-navy-900 p-6 md:p-8 rounded-3xl border border-gray-100 dark:border-gray-800">
+                            <h3 class="font-bold text-lg dark:text-white mb-8">Global Compliance Feed</h3>
+                            <div class="space-y-6">
+                                <div class="p-6 rounded-2xl border-s-4 border-red-500 bg-gray-50 dark:bg-navy-800/50">
+                                    <div class="flex justify-between mb-2"><span class="text-[10px] font-bold text-red-500 uppercase tracking-widest">Urgent Directive</span><span class="text-[10px] text-gray-400">Today</span></div>
+                                    <h4 class="font-bold mb-2 dark:text-white">FINCEN Advisory on Virtual Assets</h4>
+                                    <p class="text-xs text-gray-500 leading-relaxed mb-4">Immediate update required for travel rule thresholds on cross-border crypto transfers.</p>
+                                    <div class="flex gap-4"><button class="text-[10px] font-bold text-accent-blue hover:underline">Assess Impact</button><button class="text-[10px] font-bold text-gray-400 hover:underline">Mark as Read</button></div>
+                                </div>
+                                <div class="p-6 rounded-2xl border-s-4 border-blue-500 bg-gray-50 dark:bg-navy-800/50">
+                                    <div class="flex justify-between mb-2"><span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest">Regulation Update</span><span class="text-[10px] text-gray-400">2 days ago</span></div>
+                                    <h4 class="font-bold mb-2 dark:text-white">EU AML Package 6 (Final Draft)</h4>
+                                    <p class="text-xs text-gray-500 leading-relaxed mb-4">New standards for beneficial ownership transparency for non-EU entities.</p>
+                                    <div class="flex gap-4"><button class="text-[10px] font-bold text-accent-blue hover:underline">Read Analysis</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-navy-900 text-white p-10 rounded-[3rem] relative overflow-hidden flex flex-col justify-center text-center">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-accent-blue/20 to-transparent"></div>
+                            <div class="relative z-10">
+                                <div class="text-5xl font-extrabold text-accent-blue mb-4">98%</div>
+                                <h3 class="text-2xl font-heading font-bold mb-2">Regulatory Alignment</h3>
+                                <p class="text-sm text-gray-400 max-w-xs mx-auto mb-8">Your system is compliant with 244 out of 250 active global directives for your operating regions.</p>
+                                <button class="bg-white text-navy-900 px-8 py-3 rounded-full font-bold shadow-lg">Download Gap Report</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB: AUDIT TRAILS -->
+                <div id="tab-audit" class="tab-content animate-fade-in">
+                    <div class="bg-white dark:bg-navy-900 p-4 md:p-8 rounded-3xl border border-gray-100 dark:border-gray-800">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-8">
+                            <div>
+                                <h3 class="font-bold text-lg dark:text-white">Forensic Audit Log</h3>
+                                <p class="text-xs text-gray-500">Immutable record of every compliance action</p>
+                            </div>
+                            <div class="flex flex-col xs:flex-row gap-3 w-full sm:w-auto">
+                                <div class="relative flex-1 sm:flex-none">
+                                    <span class="absolute start-3 top-1/2 -translate-y-1/2 text-gray-400 text-[10px]"><i class="fas fa-search"></i></span>
+                                    <input type="text" placeholder="Search hash..." class="w-full ps-8 pe-4 py-2 bg-gray-50 dark:bg-navy-800 border border-gray-200 dark:border-gray-700 rounded-lg text-[10px]">
+                                </div>
+                                <button class="px-4 py-2 bg-navy-900 text-white rounded-lg text-[10px] font-bold flex items-center justify-center gap-2 whitespace-nowrap shadow-lg">
+                                    <i class="fas fa-file-export"></i> Export Bundle
+                                </button>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <!-- Audit Entry 1 -->
+                            <div class="p-4 bg-gray-50 dark:bg-navy-800 rounded-xl border border-gray-100 dark:border-gray-700 font-mono text-[10px] hover:border-accent-blue/50 transition-colors">
+                                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                    <div class="flex flex-col md:flex-row gap-2 md:gap-6">
+                                        <span class="text-gray-400 whitespace-nowrap">2026-05-16 06:12:00</span>
+                                        <span class="font-bold text-accent-blue">EVENT_VERIFIED</span>
+                                        <span class="text-gray-600 dark:text-gray-400">User #9921 verification complete via "Standard_KYC"</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 justify-end md:opacity-0 md:group-hover:opacity-100 transition-opacity">
+                                        <span class="text-accent-emerald bg-emerald-100 dark:bg-emerald-900/30 px-2 py-0.5 rounded">Sealed</span>
+                                        <i class="fas fa-external-link-alt text-gray-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Audit Entry 2 -->
+                            <div class="p-4 bg-gray-50 dark:bg-navy-800 rounded-xl border border-gray-100 dark:border-gray-700 font-mono text-[10px] hover:border-accent-blue/50 transition-colors">
+                                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                    <div class="flex flex-col md:flex-row gap-2 md:gap-6">
+                                        <span class="text-gray-400 whitespace-nowrap">2026-05-16 06:10:45</span>
+                                        <span class="font-bold text-orange-500">RULE_BYPASS</span>
+                                        <span class="text-gray-600 dark:text-gray-400">Manual review approval by admin_morgan for entity #B-200</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 justify-end md:opacity-0 md:group-hover:opacity-100 transition-opacity">
+                                        <span class="text-accent-emerald bg-emerald-100 dark:bg-emerald-900/30 px-2 py-0.5 rounded">Sealed</span>
+                                        <i class="fas fa-external-link-alt text-gray-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB: SAR REPORTING -->
+                <div id="tab-sar" class="tab-content animate-fade-in">
+                    <div class="grid lg:grid-cols-12 gap-8">
+                        <div class="lg:col-span-4 bg-white dark:bg-navy-900 p-6 md:p-8 rounded-3xl border border-gray-100 dark:border-gray-800">
+                            <h3 class="font-bold mb-6 dark:text-white">Active Drafts</h3>
+                            <div class="space-y-4">
+                                <div class="p-4 rounded-xl border border-accent-blue/20 bg-accent-blue/5">
+                                    <div class="flex justify-between items-center mb-2"><span class="text-[10px] font-bold text-accent-blue uppercase">90% Complete</span><i class="fas fa-sparkles text-accent-blue"></i></div>
+                                    <h4 class="text-xs font-bold mb-1 dark:text-white">SAR-2026-0042</h4>
+                                    <p class="text-[10px] text-gray-500">Subject: CryptoEx Velocity Alert</p>
+                                </div>
+                                <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50">
+                                    <div class="flex justify-between items-center mb-2"><span class="text-[10px] font-bold text-gray-400 uppercase">Pending Review</span></div>
+                                    <h4 class="text-xs font-bold mb-1 dark:text-white">SAR-2026-0041</h4>
+                                    <p class="text-[10px] text-gray-500">Subject: Unusual Cash Patterns</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-8 bg-white dark:bg-navy-900 p-6 md:p-10 rounded-3xl border border-gray-100 dark:border-gray-800 relative overflow-hidden">
+                            <div class="max-w-xl">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-[10px] font-bold mb-6"><i class="fas fa-brain"></i> AI REPORT ASSISTANT</div>
+                                <h2 class="text-2xl font-bold mb-4 dark:text-white">Generate SAR in Seconds</h2>
+                                <p class="text-sm text-gray-500 leading-relaxed mb-8">Our AI analyzes transaction logs, risk scores, and entity data to draft a comprehensive Suspicious Activity Report tailored to FinCEN or EU standards.</p>
+                                <div class="flex flex-col sm:flex-row gap-4">
+                                    <button class="bg-navy-900 dark:bg-accent-blue text-white px-6 py-3 rounded-xl font-bold text-sm shadow-xl hover:-translate-y-1 transition-all">Draft New Report</button>
+                                    <button class="bg-gray-100 dark:bg-navy-800 dark:text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-gray-200 dark:hover:bg-navy-700 transition-all">Configure Templates</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB: RISK ENGINE CONFIG -->
+                <div id="tab-config" class="tab-content animate-fade-in">
+                    <div class="bg-white dark:bg-navy-900 p-6 md:p-8 rounded-3xl border border-gray-100 dark:border-gray-800">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-10">
+                            <div>
+                                <h3 class="font-bold text-lg dark:text-white">Risk Scoring Parameters</h3>
+                                <p class="text-xs text-gray-500">Tune the weights of your automated decision engine</p>
+                            </div>
+                            <div class="flex gap-3 w-full sm:w-auto">
+                                <button class="flex-1 sm:flex-none px-4 py-2 bg-gray-100 dark:bg-navy-800 dark:text-white rounded-lg text-[10px] font-bold hover:bg-gray-200 dark:hover:bg-navy-700 transition-all">Discard Changes</button>
+                                <button class="flex-1 sm:flex-none px-6 py-2 bg-accent-blue text-white rounded-lg text-[10px] font-bold shadow-lg shadow-blue-500/20 hover:bg-blue-600 transition-all">Publish Config v4.2</button>
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-12">
+                            <div class="space-y-10">
+                                <div><div class="flex justify-between mb-4"><label class="text-xs font-bold dark:text-white">Identity Anomaly Score</label><span class="text-accent-blue font-bold">40%</span></div><div class="w-full h-2 bg-gray-100 dark:bg-navy-800 rounded-full overflow-hidden"><div class="w-[40%] h-full bg-accent-blue"></div></div></div>
+                                <div><div class="flex justify-between mb-4"><label class="text-xs font-bold dark:text-white">Geographic Exposure</label><span class="text-accent-blue font-bold">25%</span></div><div class="w-full h-2 bg-gray-100 dark:bg-navy-800 rounded-full overflow-hidden"><div class="w-[25%] h-full bg-accent-blue"></div></div></div>
+                                <div><div class="flex justify-between mb-4"><label class="text-xs font-bold dark:text-white">Behavioral Velocity</label><span class="text-accent-blue font-bold">35%</span></div><div class="w-full h-2 bg-gray-100 dark:bg-navy-800 rounded-full overflow-hidden"><div class="w-[35%] h-full bg-accent-blue"></div></div></div>
+                            </div>
+                            <div class="bg-gray-900 rounded-2xl p-6 font-mono text-[11px] text-gray-400 overflow-hidden relative group">
+                                <div class="flex justify-between items-center mb-4 text-[10px] text-gray-500 uppercase tracking-widest"><span>JSON Definition</span><i class="fas fa-edit group-hover:text-white transition-colors"></i></div>
+                                <div class="max-h-48 overflow-y-auto">
+<pre><code>{
+  "engine_version": "4.2",
+  "ruleset": "Standard_Growth",
+  "weights": {
+    "id_anomaly": 0.4,
+    "geo_risk": 0.25,
+    "velocity": 0.35
+  },
+  "triggers": {
+    "manual_review_score": 65,
+    "auto_block_score": 90
+  }
+}</code></pre>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent pointer-events-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        function showTab(tabName, el) {
+            // Update Title
+            const titles = {
+                'overview': 'System Overview',
+                'workflows': 'KYC/AML Workflows',
+                'monitoring': 'Transaction Monitoring',
+                'regulatory': 'Regulatory Changes',
+                'audit': 'Immutable Audit Trails',
+                'sar': 'SAR Reporting',
+                'config': 'Risk Engine Config'
+            };
+            document.getElementById('current-tab-title').textContent = titles[tabName];
+
+            // Hide all tabs
+            const contents = document.getElementsByClassName('tab-content');
+            for (let content of contents) {
+                content.classList.remove('active');
+            }
+
+            // Show current tab
+            document.getElementById('tab-' + tabName).classList.add('active');
+
+            // Update sidebar links
+            const links = document.getElementsByClassName('sidebar-link');
+            for (let link of links) {
+                link.classList.remove('active');
+            }
+            el.classList.add('active');
+        }
+    </script>
+</body>
+</html>

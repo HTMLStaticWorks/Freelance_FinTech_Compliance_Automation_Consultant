@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | CompliTech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 900: '#0B132B', 800: '#1C2541', 700: '#2A3B5C' },
+                        accent: { blue: '#3A86FF', emerald: '#06D6A0' },
+                        dark: '#121212', light: '#F8F9FA'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body class="bg-light dark:bg-dark transition-colors duration-300">
+
+    <div class="min-h-screen flex flex-col items-center justify-center p-6 lg:p-4">
+        <div class="w-full max-w-2xl flex justify-end gap-3 mb-4 relative z-50">
+            <button id="rtl-toggle" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center font-bold text-xs hover:bg-white dark:hover:bg-navy-800 transition-all border border-gray-200 dark:border-gray-700 dark:text-white shadow-lg" aria-label="Toggle RTL Mode">
+                <span id="rtl-icon">RTL</span>
+            </button>
+            <button id="theme-toggle" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:bg-white dark:hover:bg-navy-800 transition-all border border-gray-200 dark:border-gray-700 dark:text-white shadow-lg" aria-label="Toggle Dark Mode">
+                <i id="theme-icon" class="fas fa-moon"></i>
+            </button>
+        </div>
+
+        <div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10">
+            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-accent-blue/10 blur-[100px] rounded-full"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent-emerald/10 blur-[100px] rounded-full"></div>
+        </div>
+
+        <div class="w-full max-w-2xl glass-panel rounded-3xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-2xl">
+            <!-- Form Section -->
+            <div class="w-full bg-white dark:bg-navy-900 p-10 md:p-12">
+                <div class="flex justify-center mb-10">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-accent flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-accent-blue/30">C</div>
+                        <span class="font-heading font-bold text-xl tracking-tight dark:text-white">CompliTech</span>
+                    </a>
+                </div>
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-heading font-bold dark:text-white">Create Account</h3>
+                </div>
+
+                <form class="grid sm:grid-cols-2 gap-6">
+                    <div class="col-span-1">
+                        <label class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">Full Name</label>
+                        <div class="relative">
+                            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"><i class="far fa-user"></i></span>
+                            <input type="text" placeholder="John Doe" class="w-full pl-11 pr-4 py-3 rounded-xl bg-gray-50 dark:bg-navy-800 border border-gray-200 dark:border-gray-700 focus:ring-2 ring-accent-blue focus:border-transparent outline-none transition-all dark:text-white" required>
+                        </div>
+                    </div>
+                    <div class="col-span-1">
+                        <label class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">Company Name</label>
+                        <div class="relative">
+                            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"><i class="far fa-building"></i></span>
+                            <input type="text" placeholder="FinTech Inc." class="w-full pl-11 pr-4 py-3 rounded-xl bg-gray-50 dark:bg-navy-800 border border-gray-200 dark:border-gray-700 focus:ring-2 ring-accent-blue focus:border-transparent outline-none transition-all dark:text-white" required>
+                        </div>
+                    </div>
+                    <div class="col-span-2">
+                        <label class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">Work Email</label>
+                        <div class="relative">
+                            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"><i class="far fa-envelope"></i></span>
+                            <input type="email" placeholder="name@company.com" class="w-full pl-11 pr-4 py-3 rounded-xl bg-gray-50 dark:bg-navy-800 border border-gray-200 dark:border-gray-700 focus:ring-2 ring-accent-blue focus:border-transparent outline-none transition-all dark:text-white" required>
+                        </div>
+                    </div>
+                    <div class="col-span-2">
+                        <label class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">Password</label>
+                        <div class="relative">
+                            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"><i class="fas fa-lock"></i></span>
+                            <input type="password" id="reg-password" placeholder="Min. 8 characters" class="w-full pl-11 pr-12 py-3 rounded-xl bg-gray-50 dark:bg-navy-800 border border-gray-200 dark:border-gray-700 focus:ring-2 ring-accent-blue focus:border-transparent outline-none transition-all dark:text-white" required>
+                            <button type="button" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-accent-blue transition-colors toggle-password" data-target="reg-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-span-2 flex items-start gap-2">
+                        <input type="checkbox" id="terms" class="w-4 h-4 mt-0.5 rounded text-accent-blue border-gray-300 focus:ring-accent-blue" required>
+                        <label for="terms" class="text-xs text-gray-500 leading-relaxed">
+                            I agree to the <a href="#" class="text-accent-blue font-bold hover:underline">Terms of Service</a> and <a href="#" class="text-accent-blue font-bold hover:underline">Privacy Policy</a>.
+                        </label>
+                    </div>
+
+                    <div class="col-span-2">
+                        <button type="submit" class="w-full py-4 bg-navy-900 dark:bg-accent-blue text-white rounded-xl font-bold hover:bg-gray-800 dark:hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/20 hover:-translate-y-1 hover:shadow-xl active:scale-[0.98]">
+                            Create Free Account
+                        </button>
+                    </div>
+                </form>
+
+                <div class="mt-6 relative">
+                    <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-gray-200 dark:border-gray-800"></div></div>
+                    <div class="relative flex justify-center text-[10px] uppercase tracking-widest"><span class="px-4 bg-white dark:bg-navy-900 text-gray-400">Or sign up with</span></div>
+                </div>
+
+                <div class="mt-6 grid grid-cols-2 gap-4">
+                    <button class="flex items-center justify-center gap-2 py-3 border border-gray-200 dark:border-gray-800 rounded-xl hover:border-accent-blue/50 hover:bg-gray-50 dark:hover:bg-navy-800 transition-all text-xs font-semibold dark:text-white hover:shadow-lg hover:shadow-blue-500/5 hover:-translate-y-1">
+                        <i class="fab fa-google text-red-500"></i> Google
+                    </button>
+                    <button class="flex items-center justify-center gap-2 py-3 border border-gray-200 dark:border-gray-800 rounded-xl hover:border-accent-blue/50 hover:bg-gray-50 dark:hover:bg-navy-800 transition-all text-xs font-semibold dark:text-white hover:shadow-lg hover:shadow-blue-500/5 hover:-translate-y-1">
+                        <i class="fab fa-microsoft text-blue-500"></i> Microsoft
+                    </button>
+                </div>
+
+                <p class="mt-8 text-center text-sm text-gray-500">
+                    Already have an account? <a href="login.html" class="text-accent-blue font-bold hover:underline">Sign In</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

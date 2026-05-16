@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | FinTech Compliance Automation</title>
+    <meta name="description" content="Simple and transparent pricing for FinTech compliance automation. Choose a plan that fits your growth.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 900: '#0B132B', 800: '#1C2541', 700: '#2A3B5C' },
+                        accent: { blue: '#3A86FF', emerald: '#06D6A0' },
+                        dark: '#121212', light: '#F8F9FA'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body class="bg-light dark:bg-dark text-gray-800 dark:text-gray-200 transition-colors duration-300">
+
+    <!-- Header / Navbar -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 py-3 bg-transparent border-b border-transparent">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-accent flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-accent-blue/30">C</div>
+                    <span class="font-heading font-bold text-xl tracking-tight dark:text-white">CompliTech</span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex items-center gap-6 font-medium text-sm">
+                    
+                    <div class="relative group">
+                        <a href="#" class="hover:text-accent-blue transition-colors flex items-center gap-1 py-2 group">Home <i class="fas fa-chevron-down text-[10px] mt-0.5 group-hover:-rotate-180 transition-transform duration-300"></i></a>
+                        <div class="absolute top-full left-0 mt-0 w-48 glass-panel rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col p-2 shadow-xl translate-y-2 group-hover:translate-y-0 text-gray-800 dark:text-gray-200">
+                            <a href="index.html" class="px-4 py-2 hover:bg-gray-100 dark:hover:bg-navy-800 rounded-lg transition-colors flex items-center gap-2"><i class="fas fa-home text-accent-blue w-4"></i> Home 1</a>
+                            <a href="home-2.html" class="px-4 py-2 hover:bg-gray-100 dark:hover:bg-navy-800 rounded-lg transition-colors flex items-center gap-2"><i class="fas fa-layer-group text-accent-blue w-4"></i> Home 2</a>
+                        </div>
+                    </div>
+                    
+                    <a href="about.html" class="hover:text-accent-blue transition-colors">About</a>
+                    <a href="services.html" class="hover:text-accent-blue transition-colors">Services</a>
+                    <a href="blog.html" class="hover:text-accent-blue transition-colors">Blog</a>
+                    <a href="pricing.html" class="text-accent-blue font-semibold transition-colors">Pricing</a>
+                    <a href="contact.html" class="hover:text-accent-blue transition-colors">Contact</a>
+                </nav>
+
+                <div class="hidden lg:flex items-center gap-4">
+                    <button id="rtl-toggle" class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm hover:bg-gray-200 dark:hover:bg-navy-800 transition-colors" aria-label="Toggle RTL Mode"><span id="rtl-icon">RTL</span></button>
+                    <button id="theme-toggle" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-navy-800 transition-colors" aria-label="Toggle Dark Mode">
+                        <i id="theme-icon" class="fas fa-moon text-lg"></i>
+                    </button>
+                    <a href="login.html" class="px-5 py-2.5 rounded-full font-semibold text-sm border border-gray-200 dark:border-gray-700 hover:border-accent-blue dark:hover:border-accent-blue hover:bg-gray-100 dark:hover:bg-navy-800 hover:text-navy-900 dark:hover:text-white transition-all btn-hover-lift">Login</a>
+                    <a href="dashboard.html" class="bg-navy-900 dark:bg-white text-white dark:text-navy-900 px-5 py-2.5 rounded-full font-semibold text-sm hover-glow transition-all">Dashboard</a>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <div class="flex items-center gap-2 lg:hidden">
+                    <button id="rtl-toggle-tablet" class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs hover:bg-gray-200 dark:hover:bg-navy-800 transition-colors" aria-label="Toggle RTL Mode"><span id="rtl-icon-tablet">RTL</span></button>
+                    <button id="theme-toggle-tablet" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-navy-800 transition-colors" aria-label="Toggle Dark Mode">
+                        <i id="theme-icon-tablet" class="fas fa-moon text-lg"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-2xl p-2 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-white dark:bg-navy-900 border-t border-gray-200 dark:border-gray-800 p-4 flex flex-col gap-4 shadow-xl text-gray-800 dark:text-gray-200">
+            
+            <a href="index.html" class="hover:text-accent-blue transition-colors block py-2">Home</a>
+            <a href="home-2.html" class="hover:text-accent-blue transition-colors block py-2">Home 2 (SaaS)</a>
+            <a href="about.html" class="hover:text-accent-blue transition-colors block py-2">About</a>
+            <a href="services.html" class="hover:text-accent-blue transition-colors block py-2">Services</a>
+            <a href="blog.html" class="hover:text-accent-blue transition-colors block py-2">Blog</a>
+            <a href="pricing.html" class="text-accent-blue font-semibold transition-colors block py-2">Pricing</a>
+            <a href="contact.html" class="hover:text-accent-blue transition-colors block py-2">Contact</a>
+            <hr class="border-gray-200 dark:border-gray-800">
+            <a href="login.html" class="border border-gray-200 dark:border-gray-700 text-center py-3 rounded-xl font-semibold block transition-all hover:bg-gray-50 dark:hover:bg-navy-800">Login / Register</a>
+            <a href="dashboard.html" class="bg-accent-blue text-white text-center py-3 rounded-xl font-semibold block mt-2 shadow-lg shadow-blue-500/30">Dashboard</a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="pt-24">
+        <!-- Hero Section -->
+        <section class="py-20 text-center">
+            <div class="container mx-auto px-4 md:px-6 lg:px-8">
+                <h1 class="text-4xl md:text-5xl font-heading font-extrabold mb-6 dark:text-white">Plans that scale with <span class="text-gradient">your growth.</span></h1>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-12">Flexible pricing for FinTechs of all sizes. No hidden fees, just pure compliance automation.</p>
+                
+                <!-- Pricing Toggle -->
+                <div class="flex items-center justify-center gap-4 mb-16">
+                    <span id="monthly-label" class="text-sm font-semibold transition-colors duration-300">Monthly</span>
+                    <button id="pricing-toggle" class="w-14 h-7 rounded-full bg-gray-200 dark:bg-navy-800 relative p-1 transition-all focus:outline-none" aria-label="Toggle Pricing Type">
+                        <div class="w-5 h-5 rounded-full bg-white shadow-sm transform transition-transform duration-300" id="toggle-circle"></div>
+                    </button>
+                    <span id="yearly-label" class="text-sm font-semibold text-gray-400 transition-colors duration-300">Yearly <span class="text-accent-emerald text-xs bg-emerald-100 dark:bg-emerald-900/30 px-2 py-0.5 rounded-full ml-1">Save 20%</span></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Cards -->
+        <section class="pb-24">
+            <div class="container mx-auto px-4 md:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Starter -->
+                    <div class="glass-panel p-10 rounded-3xl border border-gray-200 dark:border-gray-800 flex flex-col h-full">
+                        <div class="mb-8">
+                            <h3 class="font-heading font-bold text-2xl mb-2 dark:text-white">Starter</h3>
+                            <p class="text-sm text-gray-500">Perfect for early-stage startups.</p>
+                        </div>
+                        <div class="mb-8">
+                            <span class="text-4xl font-extrabold dark:text-white price-value" data-monthly="$499" data-yearly="$399">$499</span>
+                            <span class="text-gray-500 price-duration">/month</span>
+                        </div>
+                        <ul class="space-y-4 mb-10 flex-1">
+                            <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-accent-blue"></i> Up to 1,000 Verifications/mo</li>
+                            <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-accent-blue"></i> Standard KYC & AML</li>
+                            <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-accent-blue"></i> Email Support (24h)</li>
+                            <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-accent-blue"></i> Basic API Access</li>
+                        </ul>
+                        <a href="contact.html" class="w-full py-4 rounded-xl border-2 border-accent-blue text-accent-blue font-bold text-center hover:bg-accent-blue hover:text-white transition-all">Get Started</a>
+                    </div>
+
+                    <!-- Growth -->
+                    <div class="glass-panel p-10 rounded-3xl border-2 border-accent-blue shadow-2xl shadow-blue-500/10 relative flex flex-col h-full transform scale-105 z-10">
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent-blue text-white text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-full">Most Popular</div>
+                        <div class="mb-8">
+                            <h3 class="font-heading font-bold text-2xl mb-2 dark:text-white">Growth</h3>
+                            <p class="text-sm text-gray-500">Scaling FinTech companies.</p>
+                        </div>
+                        <div class="mb-8">
+                            <span class="text-4xl font-extrabold dark:text-white price-value" data-monthly="$1,499" data-yearly="$1,199">$1,499</span>
+                            <span class="text-gray-500 price-duration">/month</span>
+                        </div>
+                        <ul class="space-y-4 mb-10 flex-1">
+                            <li class="flex items-center gap-3 text-sm font-semibold"><i class="fas fa-check text-accent-blue"></i> Up to 10,000 Verifications/mo</li>
+                            <li class="flex items-center gap-3 text-sm font-semibold"><i class="fas fa-check text-accent-blue"></i> Advanced Fraud Detection</li>
+                            <li class="flex items-center gap-3 text-sm font-semibold"><i class="fas fa-check text-accent-blue"></i> Priority Support (4h)</li>
+                            <li class="flex items-center gap-3 text-sm font-semibold"><i class="fas fa-check text-accent-blue"></i> Custom Webhooks</li>
+                            <li class="flex items-center gap-3 text-sm font-semibold"><i class="fas fa-check text-accent-blue"></i> Case Management UI</li>
+                        </ul>
+                        <a href="contact.html" class="w-full py-4 rounded-xl bg-accent-blue text-white font-bold text-center hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/30">Start 14-Day Free Trial</a>
+                    </div>
+
+                    <!-- Enterprise -->
+                    <div class="glass-panel p-10 rounded-3xl border border-gray-200 dark:border-gray-800 flex flex-col h-full md:col-span-2 lg:col-span-1 md:mx-auto lg:mx-0 md:w-full md:max-w-md lg:max-w-none">
+                        <div class="mb-8">
+                            <h3 class="font-heading font-bold text-2xl mb-2 dark:text-white">Enterprise</h3>
+                            <p class="text-sm text-gray-500">Institutional grade requirements.</p>
+                        </div>
+                        <div class="mb-8">
+                            <span class="text-4xl font-extrabold dark:text-white">Custom</span>
+                        </div>
+                        <ul class="space-y-4 mb-10 flex-1">
+                            <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-accent-blue"></i> Unlimited Verifications</li>
+                            <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-accent-blue"></i> Dedicated Compliance Officer</li>
+                            <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-accent-blue"></i> On-premise Deployment</li>
+                            <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-accent-blue"></i> White-glove Onboarding</li>
+                            <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-accent-blue"></i> SLA Guarantees</li>
+                        </ul>
+                        <a href="contact.html" class="w-full py-4 rounded-xl border-2 border-gray-800 dark:border-gray-200 text-gray-800 dark:text-gray-200 font-bold text-center hover:bg-gray-800 hover:text-white dark:hover:bg-white dark:hover:text-navy-900 transition-all">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-24 bg-gray-50 dark:bg-navy-900/30">
+            <div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-3xl">
+                <h2 class="text-3xl font-heading font-bold text-center mb-16 dark:text-white">Frequently Asked Questions</h2>
+                <div class="space-y-6">
+                    <div class="glass-panel p-6 rounded-2xl">
+                        <h4 class="font-bold mb-2 dark:text-white">What happens if I exceed my limit?</h4>
+                        <p class="text-sm text-gray-500">We won't cut you off. We'll simply charge a small overage fee per verification or automatically upgrade you to the next tier if it's more cost-effective for you.</p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl">
+                        <h4 class="font-bold mb-2 dark:text-white">Is there a setup fee?</h4>
+                        <p class="text-sm text-gray-500">No, we don't charge any setup or implementation fees for our Starter and Growth plans. Enterprise plans may involve a professional services fee for custom integrations.</p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl">
+                        <h4 class="font-bold mb-2 dark:text-white">How secure is my data?</h4>
+                        <p class="text-sm text-gray-500">We are SOC2 Type II certified and GDPR compliant. All data is encrypted at rest and in transit using AES-256 and TLS 1.3.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-dark border-t border-gray-200 dark:border-gray-800 pt-20 pb-10">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+                <div class="lg:col-span-4">
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-accent flex items-center justify-center text-white font-bold text-xl shadow-lg">C</div>
+                        <span class="font-heading font-bold text-xl tracking-tight dark:text-white">CompliTech</span>
+                    </a>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-8 max-w-sm">Enterprise-grade compliance automation consulting for modern FinTech companies. We build scalable regulatory infrastructure.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-navy-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-accent-blue hover:text-white transition-all shadow-sm"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-navy-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-accent-blue hover:text-white transition-all shadow-sm"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-navy-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-accent-blue hover:text-white transition-all shadow-sm"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-2">
+                    <h4 class="font-bold mb-6 dark:text-white text-lg">Solutions</h4>
+                    <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400 font-medium">
+                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">KYC Automation</a></li>
+                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">AML Monitoring</a></li>
+                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">Fraud Prevention</a></li>
+                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">Risk API</a></li>
+                    </ul>
+                </div>
+                
+                <div class="lg:col-span-2">
+                    <h4 class="font-bold mb-6 dark:text-white text-lg">Company</h4>
+                    <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400 font-medium">
+                        <li><a href="about.html" class="hover:text-accent-blue transition-colors block">About Us</a></li>
+                        <li><a href="blog.html" class="hover:text-accent-blue transition-colors block">Insights Blog</a></li>
+                        <li><a href="pricing.html" class="hover:text-accent-blue transition-colors block">Pricing Plans</a></li>
+                        <li><a href="contact.html" class="hover:text-accent-blue transition-colors block">Contact Sales</a></li>
+                    </ul>
+                </div>
+                
+                <div class="lg:col-span-4">
+                    <h4 class="font-bold mb-6 dark:text-white text-lg">Subscribe to Updates</h4>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">Get the latest insights on FinTech compliance and regulatory changes directly to your inbox.</p>
+                    <form class="flex mt-2 shadow-sm rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 focus-within:ring-2 ring-accent-blue focus-within:border-transparent transition-all">
+                        <input type="email" placeholder="Enter your business email" class="w-full px-4 py-3 bg-gray-50 dark:bg-navy-900/50 border-none focus:outline-none text-sm dark:text-white placeholder-gray-400" required>
+                        <button type="submit" class="bg-navy-900 dark:bg-accent-blue text-white px-6 py-3 font-semibold hover:bg-gray-800 dark:hover:bg-blue-600 transition-colors">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500 font-medium">
+                <p>&copy; 2026 CompliTech Consulting. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-accent-blue transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-accent-blue transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-accent-blue transition-colors">Cookie Settings</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('pricing-toggle');
+            const circle = document.getElementById('toggle-circle');
+            const monthlyLabel = document.getElementById('monthly-label');
+            const yearlyLabel = document.getElementById('yearly-label');
+            const prices = document.querySelectorAll('.price-value');
+            const durations = document.querySelectorAll('.price-duration');
+            
+            let isYearly = false;
+
+            const updatePricing = () => {
+                isYearly = !isYearly;
+                
+                if (isYearly) {
+                    circle.classList.add('translate-x-7');
+                    toggle.classList.add('bg-accent-blue');
+                    monthlyLabel.classList.add('text-gray-400');
+                    yearlyLabel.classList.remove('text-gray-400');
+                    yearlyLabel.classList.add('dark:text-white', 'text-navy-900');
+                    
+                    prices.forEach(p => {
+                        p.textContent = p.getAttribute('data-yearly');
+                    });
+                    durations.forEach(d => d.textContent = '/year');
+                } else {
+                    circle.classList.remove('translate-x-7');
+                    toggle.classList.remove('bg-accent-blue');
+                    monthlyLabel.classList.remove('text-gray-400');
+                    yearlyLabel.classList.add('text-gray-400');
+                    yearlyLabel.classList.remove('dark:text-white', 'text-navy-900');
+                    
+                    prices.forEach(p => {
+                        p.textContent = p.getAttribute('data-monthly');
+                    });
+                    durations.forEach(d => d.textContent = '/month');
+                }
+            };
+
+            toggle.addEventListener('click', updatePricing);
+        });
+    </script>
+</body>
+</html>
