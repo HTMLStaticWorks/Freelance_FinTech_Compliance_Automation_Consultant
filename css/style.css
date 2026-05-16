@@ -132,3 +132,55 @@ h1, h2, h3, h4, h5, h6 {
 .perspective-1000 {
   perspective: 1000px;
 }
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#back-to-top:not(.show) {
+    transform: translateY(20px);
+}
+
+.back-to-top-inner {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--accent-blue);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(58, 134, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.back-to-top-inner:hover {
+    background: #2b74f0;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(58, 134, 255, 0.6);
+}
+
+.dark .back-to-top-inner {
+    background: #ffffff;
+    color: var(--primary);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+}
+
+.dark .back-to-top-inner:hover {
+    background: var(--accent-blue);
+    color: white;
+    box-shadow: 0 15px 30px rgba(58, 134, 255, 0.4);
+}

@@ -24,7 +24,7 @@
         }
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
@@ -42,6 +42,22 @@
         .tab-content.active {
             display: block;
         }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #E5E7EB;
+            border-radius: 10px;
+        }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #1F2937;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #3A86FF;
+        }
     </style>
 </head>
 <body class="bg-[#F3F4F6] dark:bg-dark text-gray-800 dark:text-gray-200 transition-colors duration-300 overflow-hidden">
@@ -54,7 +70,7 @@
                 <span class="font-heading font-bold text-xl tracking-tight dark:text-white hidden lg:block">CompliTech <span class="text-[10px] bg-accent-blue/10 text-accent-blue px-2 py-0.5 rounded ms-1">Enterprise</span></span>
             </a>
 
-            <nav class="flex-1 px-2 lg:px-4 space-y-1 mt-4">
+            <nav class="flex-1 px-2 lg:px-4 space-y-1 mt-4 overflow-y-auto custom-scrollbar">
                 <button onclick="showTab('overview', this)" class="sidebar-link active w-full flex items-center justify-center lg:justify-start lg:gap-4 py-3 rounded-xl text-gray-500 hover:bg-gray-100 dark:hover:bg-navy-800 transition-all group">
                     <span class="w-10 h-10 flex items-center justify-center shrink-0">
                         <i class="fas fa-chart-pie text-lg"></i>
@@ -104,17 +120,6 @@
             </nav>
 
             <div class="p-4 border-t border-gray-200 dark:border-gray-800 space-y-2">
-                <div class="flex items-center gap-3 p-3 rounded-xl bg-gray-50 dark:bg-navy-800">
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-accent-blue to-accent-emerald p-0.5">
-                        <div class="w-full h-full rounded-full bg-white dark:bg-navy-900 flex items-center justify-center overflow-hidden text-gray-400">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                    </div>
-                    <div class="hidden lg:block flex-1">
-                        <div class="text-xs font-bold dark:text-white">Alex Morgan</div>
-                        <div class="text-[10px] text-gray-500 font-medium">Compliance Director</div>
-                    </div>
-                </div>
                 <a href="login.html" class="w-full flex items-center gap-4 px-4 py-3 rounded-xl text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 transition-all group">
                     <i class="fas fa-sign-out-alt text-lg"></i>
                     <span class="hidden lg:block text-sm font-bold">Logout</span>
@@ -139,21 +144,32 @@
                     </div>
                 </div>
 
-                <div class="flex items-center gap-2 md:gap-6">
+                <div class="flex items-center gap-2 md:gap-4 lg:gap-8 ml-8">
+                    <div class="relative hidden sm:block">
+                        <button class="px-4 py-2 bg-navy-900 dark:bg-white text-white dark:text-navy-900 rounded-lg text-xs font-bold flex items-center gap-2 shadow-lg shadow-blue-900/10 whitespace-nowrap">
+                            <i class="fas fa-plus"></i> <span class="hidden md:inline">New Investigation</span>
+                        </button>
+                    </div>
+
                     <button id="rtl-toggle-tablet" class="w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center font-bold text-[10px] md:text-xs hover:bg-gray-100 dark:hover:bg-navy-800 transition-colors" title="Toggle RTL">
                         <span id="rtl-icon-tablet">RTL</span>
                     </button>
                     <button id="theme-toggle-tablet" class="w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center hover:bg-gray-100 dark:hover:bg-navy-800 transition-colors">
                         <i id="theme-icon-tablet" class="fas fa-moon text-base md:text-lg"></i>
                     </button>
-                    <div class="relative hidden sm:block">
-                        <button class="px-4 py-2 bg-navy-900 dark:bg-white text-white dark:text-navy-900 rounded-lg text-xs font-bold flex items-center gap-2 shadow-lg shadow-blue-900/10 whitespace-nowrap">
-                            <i class="fas fa-plus"></i> <span class="hidden md:inline">New Investigation</span>
-                        </button>
+
+                    <!-- Profile Moved from Sidebar -->
+                    <div class="flex items-center gap-3 px-3 py-1.5 rounded-xl bg-gray-50 dark:bg-navy-800 border border-gray-100 dark:border-gray-800">
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-accent-blue to-accent-emerald p-0.5">
+                            <div class="w-full h-full rounded-full bg-white dark:bg-navy-900 flex items-center justify-center overflow-hidden text-gray-400">
+                                <i class="fas fa-user-tie text-xs"></i>
+                            </div>
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="text-[11px] font-bold dark:text-white leading-tight">Alex Morgan</div>
+                            <div class="text-[9px] text-gray-500 font-medium leading-tight">Compliance Director</div>
+                        </div>
                     </div>
-                    <a href="login.html" class="w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors" title="Logout">
-                        <i class="fas fa-sign-out-alt"></i>
-                    </a>
                 </div>
             </header>
 
@@ -163,7 +179,7 @@
                 <!-- TAB: SYSTEM OVERVIEW -->
                 <div id="tab-overview" class="tab-content active animate-fade-in">
                     <!-- Metrics -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
                         <div class="bg-white dark:bg-navy-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
                             <div class="flex justify-between items-start mb-4">
                                 <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/30 text-accent-blue flex items-center justify-center text-xl"><i class="fas fa-project-diagram"></i></div>
@@ -298,10 +314,10 @@
                                         <tr><th class="px-8 py-4">Timestamp</th><th class="px-8 py-4">Event Type</th><th class="px-8 py-4">Entity</th><th class="px-8 py-4">Amount</th><th class="px-8 py-4">Score</th></tr>
                                     </thead>
                                     <tbody class="divide-y divide-gray-100 dark:divide-gray-800 text-[11px] font-medium">
-                                        <tr class="hover:bg-gray-50 transition-colors"><td class="px-8 py-4 text-gray-400">06:28:44</td><td class="px-8 py-4">Transfer_Out</td><td class="px-8 py-4 font-bold">#U-9211</td><td class="px-8 py-4">$1,250.00</td><td class="px-8 py-4 text-green-500">12/100</td></tr>
-                                        <tr class="hover:bg-orange-50/30 transition-colors"><td class="px-8 py-4 text-gray-400">06:27:12</td><td class="px-8 py-4">Deposit_Int</td><td class="px-8 py-4 font-bold">#U-8821</td><td class="px-8 py-4">$15,000.00</td><td class="px-8 py-4 text-orange-500">54/100</td></tr>
-                                        <tr class="hover:bg-gray-50 transition-colors"><td class="px-8 py-4 text-gray-400">06:25:55</td><td class="px-8 py-4">Transfer_Out</td><td class="px-8 py-4 font-bold">#U-1120</td><td class="px-8 py-4">$450.00</td><td class="px-8 py-4 text-green-500">04/100</td></tr>
-                                        <tr class="hover:bg-red-50/30 transition-colors"><td class="px-8 py-4 text-gray-400">06:24:02</td><td class="px-8 py-4">Velocity_Alert</td><td class="px-8 py-4 font-bold">#U-7721</td><td class="px-8 py-4">$4,200.00</td><td class="px-8 py-4 text-red-500">88/100</td></tr>
+                                        <tr class="hover:bg-gray-50 dark:hover:bg-navy-800 transition-colors"><td class="px-8 py-4 text-gray-400 dark:text-gray-500">06:28:44</td><td class="px-8 py-4 dark:text-gray-300">Transfer_Out</td><td class="px-8 py-4 font-bold dark:text-white">#U-9211</td><td class="px-8 py-4 dark:text-gray-300">$1,250.00</td><td class="px-8 py-4 text-green-500">12/100</td></tr>
+                                        <tr class="hover:bg-orange-50/30 dark:hover:bg-orange-900/10 transition-colors"><td class="px-8 py-4 text-gray-400 dark:text-gray-500">06:27:12</td><td class="px-8 py-4 dark:text-gray-300">Deposit_Int</td><td class="px-8 py-4 font-bold dark:text-white">#U-8821</td><td class="px-8 py-4 dark:text-gray-300">$15,000.00</td><td class="px-8 py-4 text-orange-500">54/100</td></tr>
+                                        <tr class="hover:bg-gray-50 dark:hover:bg-navy-800 transition-colors"><td class="px-8 py-4 text-gray-400 dark:text-gray-500">06:25:55</td><td class="px-8 py-4 dark:text-gray-300">Transfer_Out</td><td class="px-8 py-4 font-bold dark:text-white">#U-1120</td><td class="px-8 py-4 dark:text-gray-300">$450.00</td><td class="px-8 py-4 text-green-500">04/100</td></tr>
+                                        <tr class="hover:bg-red-50/30 dark:hover:bg-red-900/10 transition-colors"><td class="px-8 py-4 text-gray-400 dark:text-gray-500">06:24:02</td><td class="px-8 py-4 dark:text-gray-300">Velocity_Alert</td><td class="px-8 py-4 font-bold dark:text-white">#U-7721</td><td class="px-8 py-4 dark:text-gray-300">$4,200.00</td><td class="px-8 py-4 text-red-500">88/100</td></tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -345,7 +361,7 @@
                                 <div class="text-5xl font-extrabold text-accent-blue mb-4">98%</div>
                                 <h3 class="text-2xl font-heading font-bold mb-2">Regulatory Alignment</h3>
                                 <p class="text-sm text-gray-400 max-w-xs mx-auto mb-8">Your system is compliant with 244 out of 250 active global directives for your operating regions.</p>
-                                <button class="bg-white text-navy-900 px-8 py-3 rounded-full font-bold shadow-lg">Download Gap Report</button>
+                                <button class="bg-white text-navy-900 px-8 py-3 rounded-full font-bold shadow-lg hover:bg-gray-50 hover:shadow-xl hover:-translate-y-1 transition-all active:scale-[0.98]">Download Gap Report</button>
                             </div>
                         </div>
                     </div>
@@ -374,9 +390,9 @@
                             <div class="p-4 bg-gray-50 dark:bg-navy-800 rounded-xl border border-gray-100 dark:border-gray-700 font-mono text-[10px] hover:border-accent-blue/50 transition-colors">
                                 <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
                                     <div class="flex flex-col md:flex-row gap-2 md:gap-6">
-                                        <span class="text-gray-400 whitespace-nowrap">2026-05-16 06:12:00</span>
+                                        <span class="text-gray-500 dark:text-gray-400 whitespace-nowrap">2026-05-16 06:12:00</span>
                                         <span class="font-bold text-accent-blue">EVENT_VERIFIED</span>
-                                        <span class="text-gray-600 dark:text-gray-400">User #9921 verification complete via "Standard_KYC"</span>
+                                        <span class="text-gray-900 dark:text-white">User #9921 verification complete via "Standard_KYC"</span>
                                     </div>
                                     <div class="flex items-center gap-3 justify-end md:opacity-0 md:group-hover:opacity-100 transition-opacity">
                                         <span class="text-accent-emerald bg-emerald-100 dark:bg-emerald-900/30 px-2 py-0.5 rounded">Sealed</span>
@@ -388,9 +404,9 @@
                             <div class="p-4 bg-gray-50 dark:bg-navy-800 rounded-xl border border-gray-100 dark:border-gray-700 font-mono text-[10px] hover:border-accent-blue/50 transition-colors">
                                 <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
                                     <div class="flex flex-col md:flex-row gap-2 md:gap-6">
-                                        <span class="text-gray-400 whitespace-nowrap">2026-05-16 06:10:45</span>
+                                        <span class="text-gray-500 dark:text-gray-400 whitespace-nowrap">2026-05-16 06:10:45</span>
                                         <span class="font-bold text-orange-500">RULE_BYPASS</span>
-                                        <span class="text-gray-600 dark:text-gray-400">Manual review approval by admin_morgan for entity #B-200</span>
+                                        <span class="text-gray-900 dark:text-white">Manual review approval by admin_morgan for entity #B-200</span>
                                     </div>
                                     <div class="flex items-center gap-3 justify-end md:opacity-0 md:group-hover:opacity-100 transition-opacity">
                                         <span class="text-accent-emerald bg-emerald-100 dark:bg-emerald-900/30 px-2 py-0.5 rounded">Sealed</span>
@@ -511,5 +527,12 @@
             el.classList.add('active');
         }
     </script>
+
+    <!-- Back to Top -->
+    <div id="back-to-top">
+        <div class="back-to-top-inner">
+            <i class="fas fa-chevron-up"></i>
+        </div>
+    </div>
 </body>
 </html>
