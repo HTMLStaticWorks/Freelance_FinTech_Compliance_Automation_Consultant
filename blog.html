@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | CompliTech Insights</title>
+    <title>Compliance Insights | CompliTech Consulting</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -31,17 +31,6 @@
 <body class="bg-light dark:bg-dark text-gray-800 dark:text-gray-200 transition-colors duration-300">
 
     <!-- Header / Navbar -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 py-3 bg-transparent border-b border-transparent">
         <div class="container mx-auto px-4 md:px-6 lg:px-8">
             <div class="flex items-center justify-between">
@@ -52,15 +41,13 @@
 
                 <!-- Desktop Nav -->
                 <nav class="hidden lg:flex items-center gap-6 font-medium text-sm">
-                    
+                    <!-- Home Dropdown -->
                     <div class="relative group">
-                        <a href="#" class="hover:text-accent-blue transition-colors flex items-center gap-1 py-2 group">Home <i class="fas fa-chevron-down text-[10px] mt-0.5 group-hover:-rotate-180 transition-transform duration-300"></i></a>
-                        <div class="absolute top-full left-0 mt-0 w-48 glass-panel rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col p-2 shadow-xl translate-y-2 group-hover:translate-y-0 text-gray-800 dark:text-gray-200">
-                            <a href="index.html" class="px-4 py-2 hover:bg-gray-100 dark:hover:bg-navy-800 rounded-lg transition-colors flex items-center gap-2"><i class="fas fa-home text-accent-blue w-4"></i> Home 1</a>
-                            <a href="home-2.html" class="px-4 py-2 hover:bg-gray-100 dark:hover:bg-navy-800 rounded-lg transition-colors flex items-center gap-2"><i class="fas fa-layer-group text-accent-blue w-4"></i> Home 2</a>
-                        </div>
+                        <button class="flex items-center gap-1 hover:text-accent-blue transition-colors font-medium text-sm py-2">
+                            Home <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute left-0 top-full pt-2 opacity-0 invisible pointer-events-none translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-hover:translate-y-0 z-50"><div class="w-40 bg-white dark:bg-navy-900 border border-gray-200 dark:border-gray-800 rounded-lg shadow-xl py-2 text-gray-800 dark:text-gray-200"><a href="index.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-navy-800 hover:text-accent-blue transition-colors text-sm">Home 1</a><a href="home-2.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-navy-800 hover:text-accent-blue transition-colors text-sm">Home 2</a></div></div>
                     </div>
-                    
                     <a href="about.html" class="hover:text-accent-blue transition-colors">About</a>
                     <a href="services.html" class="hover:text-accent-blue transition-colors">Services</a>
                     <a href="blog.html" class="text-accent-blue font-semibold transition-colors">Blog</a>
@@ -73,8 +60,9 @@
                     <button id="theme-toggle" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-navy-800 transition-colors" aria-label="Toggle Dark Mode">
                         <i id="theme-icon" class="fas fa-moon text-lg"></i>
                     </button>
-                    <a href="login.html" class="px-5 py-2.5 rounded-full font-semibold text-sm border border-gray-200 dark:border-gray-700 hover:border-accent-blue dark:hover:border-accent-blue hover:bg-gray-100 dark:hover:bg-navy-800 hover:text-navy-900 dark:hover:text-white transition-all btn-hover-lift">Login</a>
-                    <a href="dashboard.html" class="bg-navy-900 dark:bg-white text-white dark:text-navy-900 px-5 py-2.5 rounded-full font-semibold text-sm hover-glow transition-all">Dashboard</a>
+                    <a href="login.html" class="bg-gradient-accent text-white px-4 py-2 rounded-full font-semibold text-sm hover-glow transition-all btn-hover-lift shadow-lg shadow-accent-blue/20">Login</a>
+                    <a href="dashboard.html" class="bg-accent-blue text-white hover:bg-blue-600 px-4 py-2 rounded-full font-semibold text-sm hover-glow transition-all btn-hover-lift">Dashboard</a>
+                    <a href="contact.html" class="bg-navy-900 dark:bg-white text-white dark:text-navy-900 px-6 py-2.5 rounded-full font-semibold text-sm hover-glow transition-all btn-hover-lift">Book a Call</a>
                 </div>
 
                 <!-- Mobile Toggle -->
@@ -92,24 +80,25 @@
 
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-white dark:bg-navy-900 border-t border-gray-200 dark:border-gray-800 p-4 flex flex-col gap-4 shadow-xl text-gray-800 dark:text-gray-200 text-center">
-            
-            <a href="index.html" class="hover:text-accent-blue transition-colors block py-2">Home</a>
+            <a href="index.html" class="hover:text-accent-blue transition-colors block py-2">Home 1</a>
             <a href="home-2.html" class="hover:text-accent-blue transition-colors block py-2">Home 2</a>
             <a href="about.html" class="hover:text-accent-blue transition-colors block py-2">About</a>
             <a href="services.html" class="hover:text-accent-blue transition-colors block py-2">Services</a>
             <a href="blog.html" class="text-accent-blue font-semibold transition-colors block py-2">Blog</a>
             <a href="pricing.html" class="hover:text-accent-blue transition-colors block py-2">Pricing</a>
             <a href="contact.html" class="hover:text-accent-blue transition-colors block py-2">Contact</a>
+            <a href="login.html" class="bg-gradient-accent text-white text-center py-2.5 rounded-xl font-semibold block mt-2 shadow-lg shadow-accent-blue/20">Login</a>
+            <a href="dashboard.html" class="hover:text-accent-blue transition-colors block py-2">Dashboard</a>
             <hr class="border-gray-200 dark:border-gray-800">
-            <a href="login.html" class="border border-gray-200 dark:border-gray-700 text-center py-3 rounded-xl font-semibold block transition-all hover:bg-gray-50 dark:hover:bg-navy-800">Login / Register</a>
-            <a href="dashboard.html" class="bg-accent-blue text-white text-center py-3 rounded-xl font-semibold block mt-2 shadow-lg shadow-blue-500/30">Dashboard</a>
+            <a href="contact.html" class="bg-accent-blue text-white text-center py-3 rounded-xl font-semibold block mt-2 shadow-lg shadow-blue-500/30">Book a Call</a>
         </div>
     </header>
 
     <!-- MAIN CONTENT -->
     <main class="pt-24">
         <!-- Hero Section -->
-        <section class="py-20 bg-gray-50 dark:bg-navy-900/20">
+        <section class="py-20 relative overflow-hidden bg-gray-50 dark:bg-navy-900/20">
+            <div class="absolute top-0 right-0 -mr-32 -mt-32 w-[500px] h-[500px] bg-accent-blue opacity-5 blur-[100px] rounded-full pointer-events-none"></div>
             <div class="container mx-auto px-4 md:px-6 lg:px-8 text-center">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold mb-6 dark:text-white">
                     Compliance <span class="text-gradient">Insights.</span>
@@ -123,7 +112,7 @@
             <div class="container mx-auto px-4 md:px-6 lg:px-8">
                 <div class="group relative bg-white dark:bg-navy-900 rounded-3xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-xl flex flex-col lg:flex-row hover:shadow-2xl transition-all duration-500">
                     <div class="lg:w-1/2 h-64 lg:h-auto overflow-hidden">
-                        <img src="fintech_compliance_hero_bg_1778896754526.png" alt="AI in AML" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <img src="fintech_compliance_hero_bg.png" alt="AI in AML" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
                     <div class="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
                         <div class="flex gap-4 mb-4">
@@ -135,10 +124,10 @@
                         </a>
                         <p class="text-gray-500 dark:text-gray-400 mb-8 leading-relaxed">How generative AI and behavioral machine learning are reshaping the way FinTechs detect and prevent financial crime in real-time.</p>
                         <div class="flex items-center gap-4">
-                            <img src="sarah_jenkins_ra_1778897300567.png" alt="Sarah Jenkins" class="w-10 h-10 rounded-full object-cover shadow-md">
+                            <img src="marcus_thorne_profile.png" alt="Marcus Thorne" class="w-10 h-10 rounded-full object-cover shadow-md">
                             <div>
-                                <div class="text-sm font-bold dark:text-white">Sarah Jenkins</div>
-                                <div class="text-xs text-gray-500">Chief Risk Officer</div>
+                                <div class="text-sm font-bold dark:text-white">Marcus Thorne</div>
+                                <div class="text-xs text-gray-500">Compliance Consultant</div>
                             </div>
                         </div>
                     </div>
@@ -153,7 +142,7 @@
                     <!-- Post 1 -->
                     <div class="group flex flex-col text-center items-center">
                         <div class="w-full rounded-2xl h-56 mb-6 overflow-hidden relative">
-                            <img src="aml_monitoring_service_1778894002469.png" alt="EU Crypto Regulations" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
+                            <img src="aml_monitoring.png" alt="EU Crypto Regulations" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
                         </div>
                         <div class="flex justify-center gap-4 mb-3">
                             <span class="text-[10px] font-bold uppercase tracking-widest text-emerald-500">Regulations</span>
@@ -167,7 +156,7 @@
                     <!-- Post 2 -->
                     <div class="group flex flex-col text-center items-center">
                         <div class="w-full rounded-2xl h-56 mb-6 overflow-hidden relative">
-                            <img src="kyc_automation_service_1778893978242.png" alt="Biometrics vs Traditional" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
+                            <img src="kyc_automation.png" alt="Biometrics vs Traditional" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
                         </div>
                         <div class="flex justify-center gap-4 mb-3">
                             <span class="text-[10px] font-bold uppercase tracking-widest text-purple-500">KYC</span>
@@ -181,7 +170,7 @@
                     <!-- Post 3 -->
                     <div class="group flex flex-col text-center items-center">
                         <div class="w-full rounded-2xl h-56 mb-6 overflow-hidden relative">
-                            <img src="fraud_detection_service_1778894041316.png" alt="Account Takeovers" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
+                            <img src="fraud_detection.png" alt="Account Takeovers" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
                         </div>
                         <div class="flex justify-center gap-4 mb-3">
                             <span class="text-[10px] font-bold uppercase tracking-widest text-red-500">Fraud</span>
@@ -195,7 +184,7 @@
                     <!-- Post 4 -->
                     <div class="group flex flex-col text-center items-center">
                         <div class="w-full rounded-2xl h-56 mb-6 overflow-hidden relative">
-                            <img src="risk_scoring_service_1778894059429.png" alt="Risk Scoring" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
+                            <img src="risk_scoring.png" alt="Risk Scoring" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
                         </div>
                         <div class="flex justify-center gap-4 mb-3">
                             <span class="text-[10px] font-bold uppercase tracking-widest text-purple-500">Technology</span>
@@ -209,7 +198,7 @@
                     <!-- Post 5 -->
                     <div class="group flex flex-col text-center items-center">
                         <div class="w-full rounded-2xl h-56 mb-6 overflow-hidden relative">
-                            <img src="services_hero_bg_1778898554376.png" alt="UX in Compliance" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
+                            <img src="services_hero_bg.png" alt="UX in Compliance" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
                         </div>
                         <div class="flex justify-center gap-4 mb-3">
                             <span class="text-[10px] font-bold uppercase tracking-widest text-blue-500">User Experience</span>
@@ -223,7 +212,7 @@
                     <!-- Post 6 -->
                     <div class="group flex flex-col text-center items-center">
                         <div class="w-full rounded-2xl h-56 mb-6 overflow-hidden relative">
-                            <img src="audit_reporting_service_1778894077972.png" alt="Audit Excellence" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
+                            <img src="audit_reporting.png" alt="Audit Excellence" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
                         </div>
                         <div class="flex justify-center gap-4 mb-3">
                             <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500">Operations</span>
@@ -257,10 +246,10 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
                 <div class="lg:col-span-4">
                     <a href="index.html" class="flex items-center gap-2 mb-6">
-                        <div class="w-8 h-8 rounded-lg bg-gradient-accent flex items-center justify-center text-white font-bold text-xl shadow-lg">C</div>
+                        <div class="w-8 h-8 rounded-lg bg-gradient-accent flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-accent-blue/30">C</div>
                         <span class="font-heading font-bold text-xl tracking-tight dark:text-white">CompliTech</span>
                     </a>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-8 max-w-sm">Enterprise-grade compliance automation consulting for modern FinTech companies. We build scalable regulatory infrastructure.</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-8 max-w-sm">Bespoke compliance automation and advisory for high-growth FinTechs. Build and scale regulatory infrastructure without friction.</p>
                     <div class="flex gap-4">
                         <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-navy-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-accent-blue dark:hover:bg-accent-blue hover:text-white dark:hover:text-white hover:-translate-y-1.5 hover:shadow-lg hover:shadow-accent-blue/30 transition-all duration-300 shadow-sm"><i class="fab fa-x-twitter"></i></a>
                         <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-navy-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-accent-blue dark:hover:bg-accent-blue hover:text-white dark:hover:text-white hover:-translate-y-1.5 hover:shadow-lg hover:shadow-accent-blue/30 transition-all duration-300 shadow-sm"><i class="fab fa-linkedin-in"></i></a>
@@ -269,22 +258,22 @@
                 </div>
                 
                 <div class="lg:col-span-2">
-                    <h4 class="font-bold mb-6 dark:text-white text-lg">Solutions</h4>
+                    <h4 class="font-bold mb-6 dark:text-white text-lg">Specialties</h4>
                     <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400 font-medium">
-                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">KYC Automation</a></li>
-                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">AML Monitoring</a></li>
-                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">Fraud Prevention</a></li>
-                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">Risk API</a></li>
+                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">KYC Pipelines</a></li>
+                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">AML Rule Systems</a></li>
+                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">Fraud Shielding</a></li>
+                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">Risk Architecture</a></li>
                     </ul>
                 </div>
                 
                 <div class="lg:col-span-2">
-                    <h4 class="font-bold mb-6 dark:text-white text-lg">Company</h4>
+                    <h4 class="font-bold mb-6 dark:text-white text-lg">Consulting</h4>
                     <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400 font-medium">
-                        <li><a href="about.html" class="hover:text-accent-blue transition-colors block">About Us</a></li>
-                        <li><a href="blog.html" class="hover:text-accent-blue transition-colors block">Insights Blog</a></li>
-                        <li><a href="pricing.html" class="hover:text-accent-blue transition-colors block">Pricing Plans</a></li>
-                        <li><a href="contact.html" class="hover:text-accent-blue transition-colors block">Contact Sales</a></li>
+                        <li><a href="about.html" class="hover:text-accent-blue transition-colors block">About Marcus</a></li>
+                        <li><a href="blog.html" class="hover:text-accent-blue transition-colors block">Compliance Blog</a></li>
+                        <li><a href="pricing.html" class="hover:text-accent-blue transition-colors block">Engagement Models</a></li>
+                        <li><a href="contact.html" class="hover:text-accent-blue transition-colors block">Book Consultation</a></li>
                     </ul>
                 </div>
                 
@@ -292,14 +281,14 @@
                     <h4 class="font-bold mb-6 dark:text-white text-lg">Subscribe to Updates</h4>
                     <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">Get the latest insights on FinTech compliance and regulatory changes directly to your inbox.</p>
                     <form class="flex mt-2 shadow-sm rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 focus-within:ring-2 ring-accent-blue focus-within:border-transparent transition-all">
-                        <input type="email" placeholder="Enter your business email" class="w-full px-4 py-3 bg-gray-50 dark:bg-navy-900/50 border-none focus:outline-none text-sm dark:text-white placeholder-gray-400" required>
+                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-3 bg-gray-50 dark:bg-navy-900/50 border-none focus:outline-none text-sm dark:text-white placeholder-gray-400" required>
                         <button type="submit" class="bg-navy-900 dark:bg-accent-blue text-white px-6 py-3 font-semibold hover:bg-gray-800 dark:hover:bg-blue-600 transition-colors">Subscribe</button>
                     </form>
                 </div>
             </div>
             
             <div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500 font-medium">
-                <p>&copy; 2026 CompliTech Consulting. All rights reserved.</p>
+                <p>&copy; 2026 Marcus Thorne. All rights reserved.</p>
                 <div class="flex gap-6">
                     <a href="#" class="hover:text-accent-blue transition-colors">Privacy Policy</a>
                     <a href="#" class="hover:text-accent-blue transition-colors">Terms of Service</a>

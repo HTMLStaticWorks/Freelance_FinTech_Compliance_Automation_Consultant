@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Details | FinTech Compliance Automation</title>
-    <meta name="description" content="In-depth details of our compliance automation services.">
+    <title>Service Details | CompliTech Compliance Consulting</title>
+    <meta name="description" content="In-depth details on the bespoke compliance automation engines designed and built by Marcus Thorne.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -37,17 +37,6 @@
 <body class="bg-light dark:bg-dark text-gray-800 dark:text-gray-200 transition-colors duration-300">
 
     <!-- Header / Navbar -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 py-3 bg-transparent border-b border-transparent">
         <div class="container mx-auto px-4 md:px-6 lg:px-8">
             <div class="flex items-center justify-between">
@@ -58,15 +47,13 @@
 
                 <!-- Desktop Nav -->
                 <nav class="hidden lg:flex items-center gap-6 font-medium text-sm">
-                    
+                    <!-- Home Dropdown -->
                     <div class="relative group">
-                        <a href="#" class="hover:text-accent-blue transition-colors flex items-center gap-1 py-2 group">Home <i class="fas fa-chevron-down text-[10px] mt-0.5 group-hover:-rotate-180 transition-transform duration-300"></i></a>
-                        <div class="absolute top-full left-0 mt-0 w-48 glass-panel rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col p-2 shadow-xl translate-y-2 group-hover:translate-y-0 text-gray-800 dark:text-gray-200">
-                            <a href="index.html" class="px-4 py-2 hover:bg-gray-100 dark:hover:bg-navy-800 rounded-lg transition-colors flex items-center gap-2"><i class="fas fa-home text-accent-blue w-4"></i> Home 1</a>
-                            <a href="home-2.html" class="px-4 py-2 hover:bg-gray-100 dark:hover:bg-navy-800 rounded-lg transition-colors flex items-center gap-2"><i class="fas fa-layer-group text-accent-blue w-4"></i> Home 2</a>
-                        </div>
+                        <button class="flex items-center gap-1 hover:text-accent-blue transition-colors font-medium text-sm py-2">
+                            Home <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute left-0 top-full pt-2 opacity-0 invisible pointer-events-none translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-hover:translate-y-0 z-50"><div class="w-40 bg-white dark:bg-navy-900 border border-gray-200 dark:border-gray-800 rounded-lg shadow-xl py-2 text-gray-800 dark:text-gray-200"><a href="index.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-navy-800 hover:text-accent-blue transition-colors text-sm">Home 1</a><a href="home-2.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-navy-800 hover:text-accent-blue transition-colors text-sm">Home 2</a></div></div>
                     </div>
-                    
                     <a href="about.html" class="hover:text-accent-blue transition-colors">About</a>
                     <a href="services.html" class="text-accent-blue font-semibold transition-colors">Services</a>
                     <a href="blog.html" class="hover:text-accent-blue transition-colors">Blog</a>
@@ -79,8 +66,9 @@
                     <button id="theme-toggle" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-navy-800 transition-colors" aria-label="Toggle Dark Mode">
                         <i id="theme-icon" class="fas fa-moon text-lg"></i>
                     </button>
-                    <a href="login.html" class="px-5 py-2.5 rounded-full font-semibold text-sm border border-gray-200 dark:border-gray-700 hover:border-accent-blue dark:hover:border-accent-blue hover:bg-gray-100 dark:hover:bg-navy-800 hover:text-navy-900 dark:hover:text-white transition-all btn-hover-lift">Login</a>
-                    <a href="dashboard.html" class="bg-navy-900 dark:bg-white text-white dark:text-navy-900 px-5 py-2.5 rounded-full font-semibold text-sm hover-glow transition-all">Dashboard</a>
+                    <a href="login.html" class="bg-gradient-accent text-white px-4 py-2 rounded-full font-semibold text-sm hover-glow transition-all btn-hover-lift shadow-lg shadow-accent-blue/20">Login</a>
+                    <a href="dashboard.html" class="bg-accent-blue text-white hover:bg-blue-600 px-4 py-2 rounded-full font-semibold text-sm hover-glow transition-all btn-hover-lift">Dashboard</a>
+                    <a href="contact.html" class="bg-navy-900 dark:bg-white text-white dark:text-navy-900 px-6 py-2.5 rounded-full font-semibold text-sm hover-glow transition-all btn-hover-lift">Book a Call</a>
                 </div>
 
                 <!-- Mobile Toggle -->
@@ -98,17 +86,17 @@
 
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-white dark:bg-navy-900 border-t border-gray-200 dark:border-gray-800 p-4 flex flex-col gap-4 shadow-xl text-gray-800 dark:text-gray-200 text-center">
-            
-            <a href="index.html" class="hover:text-accent-blue transition-colors block py-2">Home</a>
+            <a href="index.html" class="hover:text-accent-blue transition-colors block py-2">Home 1</a>
             <a href="home-2.html" class="hover:text-accent-blue transition-colors block py-2">Home 2</a>
             <a href="about.html" class="hover:text-accent-blue transition-colors block py-2">About</a>
             <a href="services.html" class="text-accent-blue font-semibold transition-colors block py-2">Services</a>
             <a href="blog.html" class="hover:text-accent-blue transition-colors block py-2">Blog</a>
             <a href="pricing.html" class="hover:text-accent-blue transition-colors block py-2">Pricing</a>
             <a href="contact.html" class="hover:text-accent-blue transition-colors block py-2">Contact</a>
+            <a href="login.html" class="bg-gradient-accent text-white text-center py-2.5 rounded-xl font-semibold block mt-2 shadow-lg shadow-accent-blue/20">Login</a>
+            <a href="dashboard.html" class="hover:text-accent-blue transition-colors block py-2">Dashboard</a>
             <hr class="border-gray-200 dark:border-gray-800">
-            <a href="login.html" class="border border-gray-200 dark:border-gray-700 text-center py-3 rounded-xl font-semibold block transition-all hover:bg-gray-50 dark:hover:bg-navy-800">Login / Register</a>
-            <a href="dashboard.html" class="bg-accent-blue text-white text-center py-3 rounded-xl font-semibold block mt-2 shadow-lg shadow-blue-500/30">Dashboard</a>
+            <a href="contact.html" class="bg-accent-blue text-white text-center py-3 rounded-xl font-semibold block mt-2 shadow-lg shadow-blue-500/30">Book a Call</a>
         </div>
     </header>
 
@@ -124,7 +112,7 @@
                             <div class="text-accent-blue font-bold text-sm tracking-widest uppercase mb-4">Identity Verification</div>
                             <h1 class="text-4xl md:text-5xl font-heading font-extrabold mb-6 dark:text-white leading-tight">Next-Gen KYC Automation</h1>
                             <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                                Our AI-driven KYC solution enables you to verify customers globally in seconds. Using advanced OCR and biometric liveness checks, we eliminate manual friction while maintaining 100% compliance.
+                                I design and implement custom automated KYC engines that enable you to verify customers globally in seconds. Integrating advanced OCR and biometric liveness checks, my systems eliminate manual friction while maintaining strict compliance.
                             </p>
                             <div class="flex flex-wrap gap-4">
                                 <div class="px-4 py-2 rounded-lg bg-white dark:bg-navy-800 shadow-sm border border-gray-100 dark:border-gray-700 flex items-center gap-2">
@@ -140,7 +128,7 @@
                         </div>
                         <div class="relative group">
                             <div class="absolute inset-0 bg-accent-blue/10 blur-3xl rounded-full scale-75 group-hover:scale-100 transition-transform duration-700"></div>
-                            <img src="kyc_automation_service_1778893978242.png" alt="KYC Automation" class="relative z-10 w-full h-auto rounded-3xl shadow-2xl border border-white/20">
+                            <img src="kyc_automation.png" alt="KYC Automation" class="relative z-10 w-full h-auto rounded-3xl shadow-2xl border border-white/20">
                         </div>
                     </div>
                 </div>
@@ -172,6 +160,25 @@
                                 <p class="text-gray-500 text-sm leading-relaxed">Simple REST API integration that returns a complete verification profile in a single JSON response.</p>
                             </div>
                         </div>
+                        <div class="mt-12 grid md:grid-cols-2 gap-8 border-t border-gray-200 dark:border-gray-800 pt-12">
+                            <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-gray-200 dark:border-gray-800 shadow-lg relative">
+                                <div class="absolute top-4 right-4 text-xs font-semibold text-accent-blue bg-blue-50 dark:bg-blue-900/30 px-2.5 py-1 rounded">Arch Blueprint</div>
+                                <h4 class="text-lg font-bold mb-4 dark:text-white flex items-center gap-2"><i class="fas fa-server text-accent-blue"></i> Technical Architecture</h4>
+                                <ul class="space-y-3 text-xs text-gray-500 dark:text-gray-400">
+                                    <li><strong>Image Pre-processing:</strong> Automated image crop, deskew, and resolution normalization.</li>
+                                    <li><strong>OCR Field Matching:</strong> Regular expression parsing to cross-validate MRZ and document visual zones.</li>
+                                    <li><strong>Biometric Vector:</strong> 128-point face geometry map comparison for sub-second match verification.</li>
+                                    <li><strong>Asynchronous Callbacks:</strong> Real-time webhook delivery to decouple long-running vendor verifications.</li>
+                                </ul>
+                            </div>
+                            <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-gray-200 dark:border-gray-800 shadow-lg relative">
+                                <div class="absolute top-4 right-4 text-xs font-semibold text-accent-emerald bg-emerald-50 dark:bg-emerald-900/30 px-2.5 py-1 rounded">Production Use Case</div>
+                                <h4 class="text-lg font-bold mb-4 dark:text-white flex items-center gap-2"><i class="fas fa-rocket text-accent-emerald"></i> Practical Use Case</h4>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-4">
+                                    For a high-growth NeoBank, I engineered a KYC pipeline that verified cross-border user IDs and face liveness within 4.5 seconds. Average signup flow completion increased from 61% to 89% while reducing false rejection rates to 0.4%.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -186,7 +193,7 @@
                             <div class="text-accent-emerald font-bold text-sm tracking-widest uppercase mb-4">Transaction Security</div>
                             <h1 class="text-4xl md:text-5xl font-heading font-extrabold mb-6 dark:text-white leading-tight">Advanced AML Monitoring</h1>
                             <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                                Real-time transaction monitoring powered by behavioral machine learning. Detect money laundering, smurfing, and layering attempts before they settle.
+                                Real-time transaction monitoring tailored to your business profile. I build behavioral rules and ML-driven compliance workflows that detect money laundering, smurfing, and layering attempts before they settle.
                             </p>
                             <div class="space-y-4 mb-8">
                                 <div class="flex items-start gap-3">
@@ -198,10 +205,49 @@
                                     <p class="text-sm font-medium">Automated Suspicious Activity Report (SAR) generation.</p>
                                 </div>
                             </div>
-                             <a href="contact.html" class="bg-navy-900 dark:bg-white text-white dark:text-navy-900 px-8 py-3 rounded-full font-bold inline-block shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all active:scale-95">Request AML Demo</a>
+                            <a href="contact.html" class="bg-navy-900 dark:bg-white text-white dark:text-navy-900 px-8 py-3 rounded-full font-bold inline-block shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all active:scale-95">Book a Consultation</a>
                         </div>
                         <div class="relative">
-                            <img src="aml_monitoring_service_1778894002469.png" alt="AML Monitoring" class="w-full h-auto rounded-3xl shadow-2xl">
+                            <img src="aml_monitoring.png" alt="AML Monitoring" class="w-full h-auto rounded-3xl shadow-2xl">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="py-20">
+                <div class="container mx-auto px-4">
+                    <div class="max-w-4xl mx-auto">
+                        <h2 class="text-3xl font-heading font-bold mb-12 dark:text-white text-center">Core Capabilities</h2>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl hover:shadow-accent-emerald/10 hover:-translate-y-2 hover:border-accent-emerald/30 transition-all duration-300">
+                                <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/30 text-accent-blue flex items-center justify-center text-xl mb-6"><i class="fas fa-tachometer-alt"></i></div>
+                                <h3 class="text-xl font-bold mb-4 dark:text-white">Real-Time Risk Velocity</h3>
+                                <p class="text-gray-500 text-sm leading-relaxed">Calculate transaction velocity, volume thresholds, and location sequences in sliding time-windows.</p>
+                            </div>
+                            <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl hover:shadow-accent-emerald/10 hover:-translate-y-2 hover:border-accent-emerald/30 transition-all duration-300">
+                                <div class="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 text-accent-emerald flex items-center justify-center text-xl mb-6"><i class="fas fa-sitemap"></i></div>
+                                <h3 class="text-xl font-bold mb-4 dark:text-white">Behavioral ML Classification</h3>
+                                <p class="text-gray-500 text-sm leading-relaxed">Identify structural patterns (layering, smurfing, structuring) that bypass simple rule thresholds.</p>
+                            </div>
+                        </div>
+                        <div class="mt-12 grid md:grid-cols-2 gap-8 border-t border-gray-200 dark:border-gray-800 pt-12">
+                            <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-gray-200 dark:border-gray-800 shadow-lg relative">
+                                <div class="absolute top-4 right-4 text-xs font-semibold text-accent-emerald bg-emerald-50 dark:bg-emerald-900/30 px-2.5 py-1 rounded">Arch Blueprint</div>
+                                <h4 class="text-lg font-bold mb-4 dark:text-white flex items-center gap-2"><i class="fas fa-server text-accent-emerald"></i> Technical Architecture</h4>
+                                <ul class="space-y-3 text-xs text-gray-500 dark:text-gray-400">
+                                    <li><strong>Sliding-Window Aggregator:</strong> Redis-based sliding state windows to compute transactional velocity in real time.</li>
+                                    <li><strong>Rule Logic Engine:</strong> JSON-defined, version-controlled rules parsed dynamically at settlement.</li>
+                                    <li><strong>Webhook Ingestion:</strong> Kafka-driven transaction stream processors to isolate logic execution.</li>
+                                    <li><strong>Review Console:</strong> Custom cases manager interface with context-enriched transaction tables.</li>
+                                </ul>
+                            </div>
+                            <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-gray-200 dark:border-gray-800 shadow-lg relative">
+                                <div class="absolute top-4 right-4 text-xs font-semibold text-accent-emerald bg-emerald-50 dark:bg-emerald-900/30 px-2.5 py-1 rounded">Production Use Case</div>
+                                <h4 class="text-lg font-bold mb-4 dark:text-white flex items-center gap-2"><i class="fas fa-rocket text-accent-emerald"></i> Practical Use Case</h4>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-4">
+                                    For a cross-border remittance gateway, I designed a transaction monitoring service that reduced suspicious money transfer false alarms by 65%. It automatically flags and holds transfers with cumulative daily volumes over $3,000, requesting instant verification.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -217,7 +263,7 @@
                             <div class="text-red-500 font-bold text-sm tracking-widest uppercase mb-4">Global Compliance</div>
                             <h1 class="text-4xl md:text-5xl font-heading font-extrabold mb-6 dark:text-white leading-tight">Continuous Sanctions Screening</h1>
                             <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                                Stay ahead of evolving regulations with real-time screening against OFAC, EU, UN, and HMT lists. Our fuzzy matching engine reduces false positives by 80%.
+                                Stay ahead of evolving regulations with real-time screening against OFAC, EU, UN, and HMT lists. I design custom fuzzy matching pipelines that reduce false positives by up to 80%.
                             </p>
                             <ul class="grid sm:grid-cols-2 gap-4 mb-8">
                                 <li class="flex items-center gap-2 text-sm font-semibold"><i class="fas fa-shield text-red-500"></i> PEP & Sanctions</li>
@@ -227,7 +273,46 @@
                             </ul>
                         </div>
                         <div>
-                            <img src="sanctions_screening_service_1778894021939.png" alt="Sanctions Screening" class="w-full h-auto rounded-3xl shadow-2xl">
+                            <img src="sanctions_screening.png" alt="Sanctions Screening" class="w-full h-auto rounded-3xl shadow-2xl">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="py-20">
+                <div class="container mx-auto px-4">
+                    <div class="max-w-4xl mx-auto">
+                        <h2 class="text-3xl font-heading font-bold mb-12 dark:text-white text-center">Core Capabilities</h2>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl hover:shadow-red-500/10 hover:-translate-y-2 hover:border-red-500/30 transition-all duration-300">
+                                <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/30 text-accent-blue flex items-center justify-center text-xl mb-6"><i class="fas fa-random"></i></div>
+                                <h3 class="text-xl font-bold mb-4 dark:text-white">Fuzzy Name Matching</h3>
+                                <p class="text-gray-500 text-sm leading-relaxed">Levenshtein distance and Jaro-Winkler string comparison algorithms tuned for transliterated foreign names.</p>
+                            </div>
+                            <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl hover:shadow-red-500/10 hover:-translate-y-2 hover:border-red-500/30 transition-all duration-300">
+                                <div class="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 text-accent-emerald flex items-center justify-center text-xl mb-6"><i class="fas fa-sync-alt"></i></div>
+                                <h3 class="text-xl font-bold mb-4 dark:text-white">Watchlist Syncing</h3>
+                                <p class="text-gray-500 text-sm leading-relaxed">Automated nightly ingestion of OFAC, EU, UN, HMT, and custom domestic sanction registries.</p>
+                            </div>
+                        </div>
+                        <div class="mt-12 grid md:grid-cols-2 gap-8 border-t border-gray-200 dark:border-gray-800 pt-12">
+                            <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-gray-200 dark:border-gray-800 shadow-lg relative">
+                                <div class="absolute top-4 right-4 text-xs font-semibold text-red-500 bg-red-50 dark:bg-red-900/30 px-2.5 py-1 rounded">Arch Blueprint</div>
+                                <h4 class="text-lg font-bold mb-4 dark:text-white flex items-center gap-2"><i class="fas fa-server text-red-500"></i> Technical Architecture</h4>
+                                <ul class="space-y-3 text-xs text-gray-500 dark:text-gray-400">
+                                    <li><strong>String Scorer:</strong> C-implemented fuzzy string comparison library loaded in server memory.</li>
+                                    <li><strong>Cache Index:</strong> Elasticsearch cluster indexing consolidated global sanction names for fast retrieval.</li>
+                                    <li><strong>Daily Sync Daemon:</strong> Cron jobs fetching registries and rebuilding index maps daily.</li>
+                                    <li><strong>PEP Tier Classifier:</strong> Categorizing Politically Exposed Persons (PEPs) by international role hierarchy.</li>
+                                </ul>
+                            </div>
+                            <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-gray-200 dark:border-gray-800 shadow-lg relative">
+                                <div class="absolute top-4 right-4 text-xs font-semibold text-red-500 bg-red-50 dark:bg-red-900/30 px-2.5 py-1 rounded">Production Use Case</div>
+                                <h4 class="text-lg font-bold mb-4 dark:text-white flex items-center gap-2"><i class="fas fa-rocket text-red-500"></i> Practical Use Case</h4>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-4">
+                                    For a global currency broker, I built a fuzzy sanctions screening system. By adding country-of-birth validation and string weight filtering, false positives dropped by 80% while retaining full coverage of OFAC lists.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -243,7 +328,7 @@
                             <div class="text-purple-500 font-bold text-sm tracking-widest uppercase mb-4">Asset Protection</div>
                             <h1 class="text-4xl md:text-5xl font-heading font-extrabold mb-6 dark:text-white leading-tight">AI Fraud Detection</h1>
                             <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                                Stop fraudsters before they act. Our system analyzes device fingerprints, IP reputation, and behavioral velocity to identify account takeovers and payment fraud.
+                                Stop fraudsters before they act. I integrate advanced device fingerprinting, IP reputation, and behavioral velocity analysis to identify account takeovers and payment fraud.
                             </p>
                             <div class="grid grid-cols-2 gap-6 mb-10">
                                 <div class="p-4 rounded-xl bg-white dark:bg-navy-900 border border-purple-100 dark:border-purple-900 shadow-sm hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-1 transition-all duration-300">
@@ -257,7 +342,46 @@
                             </div>
                         </div>
                         <div>
-                            <img src="fraud_detection_service_1778894041316.png" alt="Fraud Detection" class="w-full h-auto rounded-3xl shadow-2xl">
+                            <img src="fraud_detection.png" alt="Fraud Detection" class="w-full h-auto rounded-3xl shadow-2xl">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="py-20">
+                <div class="container mx-auto px-4">
+                    <div class="max-w-4xl mx-auto">
+                        <h2 class="text-3xl font-heading font-bold mb-12 dark:text-white text-center">Core Capabilities</h2>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-2 hover:border-purple-500/30 transition-all duration-300">
+                                <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/30 text-accent-blue flex items-center justify-center text-xl mb-6"><i class="fas fa-fingerprint"></i></div>
+                                <h3 class="text-xl font-bold mb-4 dark:text-white">Device Fingerprinting</h3>
+                                <p class="text-gray-500 text-sm leading-relaxed">Capture hardware indicators, system versions, and rendering anomalies to uniquely identify client machines.</p>
+                            </div>
+                            <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-2 hover:border-purple-500/30 transition-all duration-300">
+                                <div class="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 text-accent-emerald flex items-center justify-center text-xl mb-6"><i class="fas fa-network-wired"></i></div>
+                                <h3 class="text-xl font-bold mb-4 dark:text-white">Graph-Based Analysis</h3>
+                                <p class="text-gray-500 text-sm leading-relaxed">Correlate device IDs and IP ranges to uncover hidden networks of multiple fake accounts.</p>
+                            </div>
+                        </div>
+                        <div class="mt-12 grid md:grid-cols-2 gap-8 border-t border-gray-200 dark:border-gray-800 pt-12">
+                            <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-gray-200 dark:border-gray-800 shadow-lg relative">
+                                <div class="absolute top-4 right-4 text-xs font-semibold text-purple-500 bg-purple-50 dark:bg-purple-900/30 px-2.5 py-1 rounded">Arch Blueprint</div>
+                                <h4 class="text-lg font-bold mb-4 dark:text-white flex items-center gap-2"><i class="fas fa-server text-purple-500"></i> Technical Architecture</h4>
+                                <ul class="space-y-3 text-xs text-gray-500 dark:text-gray-400">
+                                    <li><strong>Client Sandbox:</strong> WebGL and Canvas pixel rendering to generate consistent machine identifier hashes.</li>
+                                    <li><strong>Proxy Filter:</strong> WebRTC local IP extraction checks to detect hidden VPNs and residential proxies.</li>
+                                    <li><strong>Graph Database:</strong> Neo4j graph nodes linking users, phone numbers, and devices to isolate fraud rings.</li>
+                                    <li><strong>Anomaly Classifier:</strong> Sub-50ms velocity validation matching device historical behavior limits.</li>
+                                </ul>
+                            </div>
+                            <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-gray-200 dark:border-gray-800 shadow-lg relative">
+                                <div class="absolute top-4 right-4 text-xs font-semibold text-purple-500 bg-purple-50 dark:bg-purple-900/30 px-2.5 py-1 rounded">Production Use Case</div>
+                                <h4 class="text-lg font-bold mb-4 dark:text-white flex items-center gap-2"><i class="fas fa-rocket text-purple-500"></i> Practical Use Case</h4>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-4">
+                                    For an alternative micro-lending client, I built a device fingerprinting shield. By flagging shared hardware hashes among multiple applicants, we blocked a synthetic profile attack ring, saving $40,000/yr in queries.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -273,17 +397,17 @@
                             <div class="text-orange-500 font-bold text-sm tracking-widest uppercase mb-4">Adaptive Intelligence</div>
                             <h1 class="text-4xl md:text-5xl font-heading font-extrabold mb-6 dark:text-white leading-tight">Dynamic Risk Scoring</h1>
                             <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                                Every user is unique. Our risk engine calculates a holistic score based on identity data, transaction history, and environmental factors, allowing for automated step-up authentication.
+                                Every user is unique. I build custom risk engines that calculate a holistic score based on identity data, transaction history, and environmental factors, enabling automated step-up authentication.
                             </p>
                             <div class="space-y-4">
-                                <div class="flex gap-4 p-4 rounded-xl bg-white dark:bg-navy-800 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                                <div class="flex gap-4 p-4 rounded-xl bg-white dark:bg-navy-800 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-navy-900">
                                     <div class="w-10 h-10 rounded-full bg-orange-50 dark:bg-orange-900/30 text-orange-500 flex items-center justify-center shrink-0"><i class="fas fa-cog"></i></div>
                                     <div>
                                         <h4 class="font-bold text-sm dark:text-white">Custom Rule Engine</h4>
                                         <p class="text-xs text-gray-500">Define your own risk thresholds and decision logic.</p>
                                     </div>
                                 </div>
-                                <div class="flex gap-4 p-4 rounded-xl bg-white dark:bg-navy-800 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                                <div class="flex gap-4 p-4 rounded-xl bg-white dark:bg-navy-800 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-navy-900">
                                     <div class="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/30 text-accent-blue flex items-center justify-center shrink-0"><i class="fas fa-project-diagram"></i></div>
                                     <div>
                                         <h4 class="font-bold text-sm dark:text-white">Network Analysis</h4>
@@ -293,7 +417,32 @@
                             </div>
                         </div>
                         <div>
-                            <img src="risk_scoring_service_1778894059429.png" alt="Risk Scoring" class="w-full h-auto rounded-3xl shadow-2xl">
+                            <img src="risk_scoring.png" alt="Risk Scoring" class="w-full h-auto rounded-3xl shadow-2xl">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="py-20">
+                <div class="container mx-auto px-4">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="mt-12 grid md:grid-cols-2 gap-8 border-t border-gray-200 dark:border-gray-800 pt-12">
+                            <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-gray-200 dark:border-gray-800 shadow-lg relative">
+                                <div class="absolute top-4 right-4 text-xs font-semibold text-orange-500 bg-orange-50 dark:bg-orange-900/30 px-2.5 py-1 rounded">Arch Blueprint</div>
+                                <h4 class="text-lg font-bold mb-4 dark:text-white flex items-center gap-2"><i class="fas fa-server text-orange-500"></i> Technical Architecture</h4>
+                                <ul class="space-y-3 text-xs text-gray-500 dark:text-gray-400">
+                                    <li><strong>Scoring Parser:</strong> Abstract syntax tree (AST) rule runner evaluating logical risk weights.</li>
+                                    <li><strong>Limit Router:</strong> Automatic profile actions setting transactional limits by risk bands.</li>
+                                    <li><strong>Step-Up Trigger:</strong> Dynamic integration of MFA / ID check challenges for borderline activity.</li>
+                                </ul>
+                            </div>
+                            <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-gray-200 dark:border-gray-800 shadow-lg relative">
+                                <div class="absolute top-4 right-4 text-xs font-semibold text-orange-500 bg-orange-50 dark:bg-orange-900/30 px-2.5 py-1 rounded">Production Use Case</div>
+                                <h4 class="text-lg font-bold mb-4 dark:text-white flex items-center gap-2"><i class="fas fa-rocket text-orange-500"></i> Practical Use Case</h4>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-4">
+                                    For a marketplace platform, I engineered a risk scoring calculator. The model scores merchant risk profiles dynamically using transaction volumes, country codes, and chargeback signals, keeping active accounts running smoothly while isolating risks.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -309,21 +458,46 @@
                             <div class="text-gray-500 font-bold text-sm tracking-widest uppercase mb-4">Regulatory Readiness</div>
                             <h1 class="text-4xl md:text-5xl font-heading font-extrabold mb-6 dark:text-white leading-tight">Audit & Reporting</h1>
                             <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                                Never fear an audit again. Our platform maintains an immutable audit trail of every decision, complete with evidence and timestamps, exportable in one click.
+                                Never fear an audit again. I design systems that maintain an immutable audit trail of every decision, complete with evidence and timestamps, exportable in one click.
                             </p>
                             <div class="grid grid-cols-1 gap-4 mb-8">
-                                <div class="flex items-center gap-3 p-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-navy-900 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                                <div class="flex items-center gap-3 p-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-navy-900 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-navy-900">
                                     <i class="fas fa-file-export text-accent-blue text-xl"></i>
                                     <span class="font-semibold text-sm">Regulatory-Format PDF/CSV Exports</span>
                                 </div>
-                                <div class="flex items-center gap-3 p-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-navy-900 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                                <div class="flex items-center gap-3 p-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-navy-900 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-navy-900">
                                     <i class="fas fa-history text-accent-emerald text-xl"></i>
                                     <span class="font-semibold text-sm">Full Revision History for Case Notes</span>
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <img src="audit_reporting_service_1778894077972.png" alt="Audit & Reporting" class="w-full h-auto rounded-3xl shadow-2xl">
+                            <img src="audit_reporting.png" alt="Audit & Reporting" class="w-full h-auto rounded-3xl shadow-2xl">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="py-20">
+                <div class="container mx-auto px-4">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="mt-12 grid md:grid-cols-2 gap-8 border-t border-gray-200 dark:border-gray-800 pt-12">
+                            <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-gray-200 dark:border-gray-800 shadow-lg relative">
+                                <div class="absolute top-4 right-4 text-xs font-semibold text-gray-500 bg-gray-100 dark:bg-navy-800/50 px-2.5 py-1 rounded">Arch Blueprint</div>
+                                <h4 class="text-lg font-bold mb-4 dark:text-white flex items-center gap-2"><i class="fas fa-server text-gray-500"></i> Technical Architecture</h4>
+                                <ul class="space-y-3 text-xs text-gray-500 dark:text-gray-400">
+                                    <li><strong>Decision Hasher:</strong> SHA-256 integrity signatures logged for all system outputs.</li>
+                                    <li><strong>Audit DB:</strong> Immutable write-only database setup for high-assurance storage.</li>
+                                    <li><strong>Export Processor:</strong> Background workers packaging decisions and evidence files.</li>
+                                </ul>
+                            </div>
+                            <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-gray-200 dark:border-gray-800 shadow-lg relative">
+                                <div class="absolute top-4 right-4 text-xs font-semibold text-gray-500 bg-gray-100 dark:bg-navy-800/50 px-2.5 py-1 rounded">Production Use Case</div>
+                                <h4 class="text-lg font-bold mb-4 dark:text-white flex items-center gap-2"><i class="fas fa-rocket text-gray-500"></i> Practical Use Case</h4>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-4">
+                                    I designed a cryptographic ledger compliance repository for an online bank. The audit logs proved rules compliance for SOC 2 Type II audits and partner bank security checks.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -338,10 +512,10 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
                 <div class="lg:col-span-4">
                     <a href="index.html" class="flex items-center gap-2 mb-6">
-                        <div class="w-8 h-8 rounded-lg bg-gradient-accent flex items-center justify-center text-white font-bold text-xl shadow-lg">C</div>
+                        <div class="w-8 h-8 rounded-lg bg-gradient-accent flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-accent-blue/30">C</div>
                         <span class="font-heading font-bold text-xl tracking-tight dark:text-white">CompliTech</span>
                     </a>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-8 max-w-sm">Enterprise-grade compliance automation consulting for modern FinTech companies. We build scalable regulatory infrastructure.</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-8 max-w-sm">Bespoke compliance automation and advisory for high-growth FinTechs. Build and scale regulatory infrastructure without friction.</p>
                     <div class="flex gap-4">
                         <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-navy-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-accent-blue dark:hover:bg-accent-blue hover:text-white dark:hover:text-white hover:-translate-y-1.5 hover:shadow-lg hover:shadow-accent-blue/30 transition-all duration-300 shadow-sm"><i class="fab fa-x-twitter"></i></a>
                         <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-navy-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-accent-blue dark:hover:bg-accent-blue hover:text-white dark:hover:text-white hover:-translate-y-1.5 hover:shadow-lg hover:shadow-accent-blue/30 transition-all duration-300 shadow-sm"><i class="fab fa-linkedin-in"></i></a>
@@ -350,22 +524,22 @@
                 </div>
                 
                 <div class="lg:col-span-2">
-                    <h4 class="font-bold mb-6 dark:text-white text-lg">Solutions</h4>
+                    <h4 class="font-bold mb-6 dark:text-white text-lg">Specialties</h4>
                     <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400 font-medium">
-                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">KYC Automation</a></li>
-                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">AML Monitoring</a></li>
-                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">Fraud Prevention</a></li>
-                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">Risk API</a></li>
+                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">KYC Pipelines</a></li>
+                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">AML Rule Systems</a></li>
+                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">Fraud Shielding</a></li>
+                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">Risk Architecture</a></li>
                     </ul>
                 </div>
                 
                 <div class="lg:col-span-2">
-                    <h4 class="font-bold mb-6 dark:text-white text-lg">Company</h4>
+                    <h4 class="font-bold mb-6 dark:text-white text-lg">Consulting</h4>
                     <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400 font-medium">
-                        <li><a href="about.html" class="hover:text-accent-blue transition-colors block">About Us</a></li>
-                        <li><a href="blog.html" class="hover:text-accent-blue transition-colors block">Insights Blog</a></li>
-                        <li><a href="pricing.html" class="hover:text-accent-blue transition-colors block">Pricing Plans</a></li>
-                        <li><a href="contact.html" class="hover:text-accent-blue transition-colors block">Contact Sales</a></li>
+                        <li><a href="about.html" class="hover:text-accent-blue transition-colors block">About Marcus</a></li>
+                        <li><a href="blog.html" class="hover:text-accent-blue transition-colors block">Compliance Blog</a></li>
+                        <li><a href="pricing.html" class="hover:text-accent-blue transition-colors block">Engagement Models</a></li>
+                        <li><a href="contact.html" class="hover:text-accent-blue transition-colors block">Book Consultation</a></li>
                     </ul>
                 </div>
                 
@@ -373,14 +547,14 @@
                     <h4 class="font-bold mb-6 dark:text-white text-lg">Subscribe to Updates</h4>
                     <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">Get the latest insights on FinTech compliance and regulatory changes directly to your inbox.</p>
                     <form class="flex mt-2 shadow-sm rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 focus-within:ring-2 ring-accent-blue focus-within:border-transparent transition-all">
-                        <input type="email" placeholder="Enter your business email" class="w-full px-4 py-3 bg-gray-50 dark:bg-navy-900/50 border-none focus:outline-none text-sm dark:text-white placeholder-gray-400" required>
-                        <button type="submit" class="bg-navy-900 dark:bg-accent-blue text-white px-6 py-3 font-semibold hover:bg-accent-blue dark:hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-500/20 transition-all active:scale-95">Subscribe</button>
+                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-3 bg-gray-50 dark:bg-navy-900/50 border-none focus:outline-none text-sm dark:text-white placeholder-gray-400" required>
+                        <button type="submit" class="bg-navy-900 dark:bg-accent-blue text-white px-6 py-3 font-semibold hover:bg-gray-800 dark:hover:bg-blue-600 transition-colors">Subscribe</button>
                     </form>
                 </div>
             </div>
             
             <div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500 font-medium">
-                <p>&copy; 2026 CompliTech Consulting. All rights reserved.</p>
+                <p>&copy; 2026 Marcus Thorne. All rights reserved.</p>
                 <div class="flex gap-6">
                     <a href="#" class="hover:text-accent-blue transition-colors">Privacy Policy</a>
                     <a href="#" class="hover:text-accent-blue transition-colors">Terms of Service</a>
@@ -401,7 +575,7 @@
             contents.forEach(content => {
                 if (content.id === hash) {
                     content.classList.add('active');
-                    document.title = content.querySelector('h1').innerText + " | CompliTech";
+                    document.title = content.querySelector('h1').innerText + " | Marcus Thorne";
                     found = true;
                 } else {
                     content.classList.remove('active');

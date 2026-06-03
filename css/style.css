@@ -19,8 +19,51 @@ body {
   max-width: 100% !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500 !important;
+}
+
+/* Enforce paragraph/subheading font weights between 400-550 */
+p, 
+.subheading, 
+.subtitle, 
+.description, 
+.lead {
+  font-weight: 400;
+}
+
+p strong,
+p b,
+p .font-medium,
+p .font-semibold,
+p .font-bold,
+p .font-extrabold,
+.subheading strong,
+.subheading b,
+.subheading .font-medium,
+.subheading .font-semibold,
+.subheading .font-bold,
+.subheading .font-extrabold,
+.subtitle strong,
+.subtitle b,
+.subtitle .font-medium,
+.subtitle .font-semibold,
+.subtitle .font-bold,
+.subtitle .font-extrabold,
+p.font-medium,
+p.font-semibold,
+p.font-bold,
+p.font-extrabold,
+.subheading.font-medium,
+.subheading.font-semibold,
+.subheading.font-bold,
+.subheading.font-extrabold,
+.subtitle.font-medium,
+.subtitle.font-semibold,
+.subtitle.font-bold,
+.subtitle.font-extrabold {
+  font-weight: 500 !important;
 }
 
 /* Glassmorphism utilities */
@@ -30,12 +73,98 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              border-color 0.3s ease, 
+              background-color 0.3s ease;
 }
 
 .dark .glass-panel {
   background: rgba(28, 37, 65, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              border-color 0.3s ease, 
+              background-color 0.3s ease;
+}
+
+/* Premium card transition wrappers */
+.bg-white.rounded-2xl.border,
+.dark .bg-navy-900.rounded-2xl.border {
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              border-color 0.3s ease, 
+              background-color 0.3s ease;
+}
+
+/* Global Card Text Centering (excluding no-hover static layouts) */
+.glass-panel:not(.no-hover),
+.bg-white.rounded-2xl.border:not(.no-hover),
+.dark .bg-navy-900.rounded-2xl.border:not(.no-hover) {
+  text-align: center !important;
+}
+
+/* Center sub-components and lists within cards */
+.glass-panel:not(.no-hover) ul,
+.bg-white.rounded-2xl.border:not(.no-hover) ul,
+.dark .bg-navy-900.rounded-2xl.border:not(.no-hover) ul {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin: 0 auto;
+}
+
+/* Center flex layouts (e.g. icons, items-center tags) horizontally in cards */
+.glass-panel:not(.no-hover) .flex.items-center.gap-4,
+.bg-white.rounded-2xl.border:not(.no-hover) .flex.items-center.gap-4,
+.dark .bg-navy-900.rounded-2xl.border:not(.no-hover) .flex.items-center.gap-4 {
+  justify-content: center;
+}
+
+/* Center block-level icons and profile pictures */
+.glass-panel:not(.no-hover) .w-12.h-12,
+.bg-white.rounded-2xl.border:not(.no-hover) .w-12.h-12,
+.dark .bg-navy-900.rounded-2xl.border:not(.no-hover) .w-12.h-12,
+.glass-panel:not(.no-hover) .w-16.h-16,
+.bg-white.rounded-2xl.border:not(.no-hover) .w-16.h-16,
+.dark .bg-navy-900.rounded-2xl.border:not(.no-hover) .w-16.h-16 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ensure code blocks and pre-formatted text remain left-aligned */
+.glass-panel:not(.no-hover) .font-mono,
+.glass-panel:not(.no-hover) pre,
+.glass-panel:not(.no-hover) code,
+.bg-white.rounded-2xl.border:not(.no-hover) .font-mono,
+.bg-white.rounded-2xl.border:not(.no-hover) pre,
+.bg-white.rounded-2xl.border:not(.no-hover) code,
+.dark .bg-navy-900.rounded-2xl.border:not(.no-hover) .font-mono,
+.dark .bg-navy-900.rounded-2xl.border:not(.no-hover) pre,
+.dark .bg-navy-900.rounded-2xl.border:not(.no-hover) code {
+  text-align: left !important;
+}
+
+/* Premium Card Hover State (Soft Lift + Colored Shadow Glow) */
+.glass-panel:hover:not(.no-hover),
+.bg-white.rounded-2xl.border:hover:not(.no-hover),
+.dark .bg-navy-900.rounded-2xl.border:hover:not(.no-hover) {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(58, 134, 255, 0.12), 
+              0 1px 3px rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(58, 134, 255, 0.3) !important;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.dark .glass-panel:hover:not(.no-hover),
+.dark .bg-white.rounded-2xl.border:hover:not(.no-hover),
+.dark .bg-navy-900.rounded-2xl.border:hover:not(.no-hover) {
+  box-shadow: 0 20px 40px rgba(6, 214, 160, 0.08), 
+              0 1px 3px rgba(0, 0, 0, 0.2) !important;
+  border-color: rgba(6, 214, 160, 0.25) !important;
+  background-color: rgba(28, 37, 65, 0.75);
 }
 
 .text-gradient {

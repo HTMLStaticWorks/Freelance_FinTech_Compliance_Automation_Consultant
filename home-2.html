@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaaS Platform | FinTech Compliance Automation</title>
-    <meta name="description" content="Discover our powerful compliance automation SaaS platform for FinTechs. APIs, workflows, and real-time monitoring.">
+    <title>CompliTech | Compliance Systems Demo</title>
+    <meta name="description" content="Explore custom compliance engines and workflows designed by Marcus Thorne, Freelance FinTech Compliance Automation Consultant.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -53,15 +53,13 @@
 
                 <!-- Desktop Nav -->
                 <nav class="hidden lg:flex items-center gap-6 font-medium text-sm">
-                    
+                    <!-- Home Dropdown -->
                     <div class="relative group">
-                        <a href="#" class="text-accent-blue font-semibold hover:text-accent-blue transition-colors flex items-center gap-1 py-2 group">Home <i class="fas fa-chevron-down text-[10px] mt-0.5 group-hover:-rotate-180 transition-transform duration-300"></i></a>
-                        <div class="absolute top-full left-0 mt-0 w-48 glass-panel rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col p-2 shadow-xl translate-y-2 group-hover:translate-y-0 text-gray-800 dark:text-gray-200">
-                            <a href="index.html" class="px-4 py-2 hover:bg-gray-100 dark:hover:bg-navy-800 rounded-lg transition-colors flex items-center gap-2"><i class="fas fa-home text-accent-blue w-4"></i> Home 1</a>
-                            <a href="home-2.html" class="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-accent-blue font-bold rounded-lg transition-colors flex items-center gap-2"><i class="fas fa-layer-group text-accent-blue w-4"></i> Home 2</a>
-                        </div>
+                        <button class="flex items-center gap-1 text-accent-blue font-semibold transition-colors text-sm py-2">
+                            Home <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute left-0 top-full pt-2 opacity-0 invisible pointer-events-none translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-hover:translate-y-0 z-50"><div class="w-40 bg-white dark:bg-navy-900 border border-gray-200 dark:border-gray-800 rounded-lg shadow-xl py-2 text-gray-800 dark:text-gray-200"><a href="index.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-navy-800 hover:text-accent-blue transition-colors text-sm">Home 1</a><a href="home-2.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-navy-800 text-accent-blue font-semibold transition-colors text-sm">Home 2</a></div></div>
                     </div>
-                    
                     <a href="about.html" class="hover:text-accent-blue transition-colors">About</a>
                     <a href="services.html" class="hover:text-accent-blue transition-colors">Services</a>
                     <a href="blog.html" class="hover:text-accent-blue transition-colors">Blog</a>
@@ -74,8 +72,9 @@
                     <button id="theme-toggle" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-navy-800 transition-colors" aria-label="Toggle Dark Mode">
                         <i id="theme-icon" class="fas fa-moon text-lg"></i>
                     </button>
-                    <a href="login.html" class="px-5 py-2.5 rounded-full font-semibold text-sm border border-gray-200 dark:border-gray-700 hover:border-accent-blue dark:hover:border-accent-blue hover:bg-gray-100 dark:hover:bg-navy-800 hover:text-navy-900 dark:hover:text-white transition-all btn-hover-lift">Login</a>
-                    <a href="dashboard.html" class="bg-navy-900 dark:bg-white text-white dark:text-navy-900 px-5 py-2.5 rounded-full font-semibold text-sm hover-glow transition-all">Dashboard</a>
+                    <a href="login.html" class="bg-gradient-accent text-white px-4 py-2 rounded-full font-semibold text-sm hover-glow transition-all btn-hover-lift shadow-lg shadow-accent-blue/20">Login</a>
+                    <a href="dashboard.html" class="bg-accent-blue text-white hover:bg-blue-600 px-4 py-2 rounded-full font-semibold text-sm hover-glow transition-all btn-hover-lift">Dashboard</a>
+                    <a href="contact.html" class="bg-white text-navy-900 px-6 py-2.5 rounded-full font-semibold text-sm hover-glow transition-all btn-hover-lift">Book a Call</a>
                 </div>
 
                 <!-- Mobile Toggle -->
@@ -93,17 +92,17 @@
 
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-white dark:bg-navy-900 border-t border-gray-200 dark:border-gray-800 p-4 flex flex-col gap-4 shadow-xl text-gray-800 dark:text-gray-200 text-center">
-            
-            <a href="index.html" class="hover:text-accent-blue transition-colors block py-2">Home</a>
+            <a href="index.html" class="hover:text-accent-blue transition-colors block py-2">Home 1</a>
             <a href="home-2.html" class="text-accent-blue font-semibold transition-colors block py-2">Home 2</a>
             <a href="about.html" class="hover:text-accent-blue transition-colors block py-2">About</a>
             <a href="services.html" class="hover:text-accent-blue transition-colors block py-2">Services</a>
             <a href="blog.html" class="hover:text-accent-blue transition-colors block py-2">Blog</a>
             <a href="pricing.html" class="hover:text-accent-blue transition-colors block py-2">Pricing</a>
             <a href="contact.html" class="hover:text-accent-blue transition-colors block py-2">Contact</a>
+            <a href="login.html" class="bg-gradient-accent text-white text-center py-2.5 rounded-xl font-semibold block mt-2 shadow-lg shadow-accent-blue/20">Login</a>
+            <a href="dashboard.html" class="hover:text-accent-blue transition-colors block py-2">Dashboard</a>
             <hr class="border-gray-200 dark:border-gray-800">
-            <a href="login.html" class="border border-gray-200 dark:border-gray-700 text-center py-3 rounded-xl font-semibold block transition-all hover:bg-gray-50 dark:hover:bg-navy-800">Login / Register</a>
-            <a href="dashboard.html" class="bg-accent-blue text-white text-center py-3 rounded-xl font-semibold block mt-2 shadow-lg shadow-blue-500/30">Dashboard</a>
+            <a href="contact.html" class="bg-accent-blue text-white text-center py-3 rounded-xl font-semibold block mt-2 shadow-lg shadow-blue-500/30">Book a Call</a>
         </div>
     </header>
 
@@ -112,11 +111,11 @@
         <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 bg-navy-900 overflow-hidden text-center">
             <!-- Background Image with Overlay -->
             <div class="absolute inset-0 z-0">
-                <img src="fintech_saas_hero_bg_1778895434447.png" alt="Background" class="w-full h-full object-cover">
+                <img src="fintech_saas_hero_bg.png" alt="Background" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-navy-900/60"></div>
             </div>
             
-            <div class="container mx-auto px-4 relative z-10">
+            <div class="container mx-auto px-8 sm:px-10 md:px-16 lg:px-20 relative z-10">
                 <span class="inline-block py-1.5 px-4 rounded-full bg-white/10 text-emerald-400 text-sm font-semibold mb-6 border border-white/20 backdrop-blur-md">Platform v2.0 is Live</span>
                 <h1 class="text-4xl md:text-5xl lg:text-7xl font-heading font-extrabold text-white mb-6 max-w-4xl mx-auto leading-tight">
                     The Complete Engine for <br>
@@ -138,7 +137,7 @@
             <div class="container mx-auto px-4 md:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 dark:text-white">Visual Workflow Builder</h2>
-                    <p class="text-gray-600 dark:text-gray-400 text-lg">Create complex compliance rules without writing a single line of code using our intuitive drag-and-drop workflow engine.</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg">Create complex compliance rules without writing a single line of code using a clean, drag-and-drop workflow engine I customize for your stack.</p>
                 </div>
 
                 <div class="max-w-4xl mx-auto relative">
@@ -208,6 +207,55 @@
             </div>
         </section>
 
+        <!-- SECTION 2.5: Expertise Spotlight & Stripe Pedigree -->
+        <section class="py-24 bg-white dark:bg-navy-900 border-t border-gray-200 dark:border-gray-800">
+            <div class="container mx-auto px-4 md:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="order-2 lg:order-1 relative flex justify-center">
+                        <div class="absolute inset-0 bg-accent-blue/10 blur-3xl rounded-full scale-75 pointer-events-none"></div>
+                        <div class="glass-panel p-8 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-navy-800/80 shadow-2xl relative max-w-md w-full dark:bg-navy-900">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-16 h-16 rounded-2xl overflow-hidden border-2 border-accent-blue shadow-lg">
+                                    <img src="marcus_thorne_profile.png" alt="Marcus Thorne" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg dark:text-white leading-tight">Marcus Thorne</h4>
+                                    <p class="text-xs text-accent-blue font-semibold uppercase tracking-wider mt-1">Embedded Advisor</p>
+                                </div>
+                            </div>
+                            <blockquote class="italic text-sm text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                                "Startups fail compliance because they use off-the-shelf dashboards blindly. I embed directly to build custom, vendor-agnostic infrastructure tailored to your exact transaction flow."
+                            </blockquote>
+                            <div class="flex items-center justify-between border-t border-gray-100 dark:border-gray-700 pt-4 text-xs font-semibold text-gray-500">
+                                <span>Former Head of Compliance Infrastructure at Stripe</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-1 lg:order-2 space-y-6">
+                        <span class="inline-block py-1 px-3 rounded-full bg-blue-50 dark:bg-blue-900/30 text-accent-blue text-xs font-semibold uppercase tracking-wider">Consultant Pedigree</span>
+                        <h2 class="text-3xl md:text-4xl font-heading font-bold dark:text-white leading-tight">The Stripe Experience: <br><span class="text-gradient">Automated at Scale</span></h2>
+                        <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                            I design and deploy custom automated pipelines built on 5+ years of scaling Stripe's core verification systems.
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                            Unlike traditional consulting firms, I write core integration code, model database schemas, and configure webhooks directly alongside your engineering team.
+                        </p>
+                        <div class="grid grid-cols-2 gap-6 pt-4 border-t border-gray-100 dark:border-gray-800">
+                            <div>
+                                <h5 class="font-bold text-lg text-accent-blue mb-1">Scale Experience</h5>
+                                <p class="text-xs text-gray-500">Designed core verification engines scaled to support $10B+ transaction volumes.</p>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-lg text-accent-emerald mb-1">Embedded Advisory</h5>
+                                <p class="text-xs text-gray-500">I partner directly with your engineering leads to ensure SOC 2 audits readiness.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- SECTION 3: Regulatory Change Management -->
         <section class="py-24 border-y border-gray-200 dark:border-gray-800 bg-white dark:bg-navy-900">
             <div class="container mx-auto px-4 md:px-6 lg:px-8">
@@ -247,7 +295,7 @@
                         </div>
                         <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 dark:text-white text-center lg:text-left">Future-Proof Regulatory Management</h2>
                         <p class="text-gray-600 dark:text-gray-400 mb-8 text-lg leading-relaxed text-center lg:text-left">
-                            Regulations change rapidly. Our platform automatically monitors global regulatory databases and suggests updates to your compliance workflows to ensure you are never caught off guard.
+                            Regulations change rapidly. The custom platforms I design automatically monitor global regulatory databases and suggest updates to your compliance workflows to ensure you are never caught off guard.
                         </p>
                         <ul class="space-y-4">
                             <li class="flex flex-col items-center lg:flex-row lg:items-start gap-3 text-center lg:text-left">
@@ -284,8 +332,8 @@
 
             <div class="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-white">Developer-First API Experience</h2>
-                    <p class="text-gray-300 text-lg">Integrate our full compliance suite into your app with just a few lines of code. Robust webhooks, comprehensive documentation, and 99.99% uptime SLA.</p>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-white">Developer-First Architecture</h2>
+                    <p class="text-gray-300 text-lg">I build compliance solutions that integrate cleanly into your existing stack. Here is a typical example of an SDK interface I engineer for client systems.</p>
                 </div>
 
                 <div class="grid lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
@@ -297,15 +345,15 @@
                             <i class="fas fa-copy text-gray-500 hover:text-white cursor-pointer"></i>
                         </div>
                         <div class="p-4 overflow-x-auto">
-                            <pre class="text-sm font-mono leading-loose"><code class="text-gray-300"><span class="text-purple-400">const</span> <span class="text-blue-400">complitech</span> = <span class="text-purple-400">require</span>(<span class="text-green-400">'@complitech/node'</span>);
+                            <pre class="text-sm font-mono leading-loose"><code class="text-gray-300"><span class="text-purple-400">const</span> <span class="text-blue-400">compliance</span> = <span class="text-purple-400">require</span>(<span class="text-green-400">'@client/compliance-sdk'</span>);
 
-<span class="text-gray-500">// Initialize client</span>
-<span class="text-purple-400">const</span> client = <span class="text-purple-400">new</span> <span class="text-yellow-300">complitech</span>({ 
-  apiKey: process.env.<span class="text-white">COMPLITECH_KEY</span> 
+// Initialize custom client
+const client = new compliance({ 
+  apiKey: process.env.COMPLIANCE_API_KEY 
 });
 
-<span class="text-gray-500">// Run full KYC/AML check</span>
-<span class="text-purple-400">const</span> result = <span class="text-purple-400">await</span> client.verifications.<span class="text-blue-300">create</span>({
+// Run automated KYC/AML checks
+const result = await client.verifications.run({
   user: {
     firstName: <span class="text-green-400">"John"</span>,
     lastName: <span class="text-green-400">"Doe"</span>,
@@ -343,6 +391,218 @@
                                     <h4 class="text-xl font-bold text-white mb-2">SDKs for Every Stack</h4>
                                     <p class="text-gray-400 text-sm leading-relaxed">Official libraries available for Node.js, Python, Ruby, Go, Java, and PHP for rapid integration.</p>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4.5: Practical Use Cases -->
+        <section class="py-24 bg-white dark:bg-navy-900 border-t border-gray-200 dark:border-gray-800">
+            <div class="container mx-auto px-4 md:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="inline-block py-1 px-3 rounded-full bg-blue-50 dark:bg-blue-900/30 text-accent-blue text-xs font-semibold uppercase tracking-wider mb-4">Real-World Application</span>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold dark:text-white text-center">Practical Use Cases</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mt-4 text-lg">See how CompliTech custom systems are engineered to address unique compliance challenges across different financial verticals.</p>
+                </div>
+
+                <!-- Tabs Navigation -->
+                <div class="flex flex-wrap justify-center gap-2 mb-12 max-w-4xl mx-auto" id="use-case-tabs" role="tablist">
+                    <button class="use-case-tab active px-6 py-3 rounded-full font-semibold text-sm border transition-all flex items-center gap-2 bg-accent-blue text-white border-accent-blue" data-tab="neobank" id="tab-neobank">
+                        <i class="fas fa-university"></i> NeoBanking
+                    </button>
+                    <button class="use-case-tab px-6 py-3 rounded-full font-semibold text-sm border transition-all flex items-center gap-2 bg-white dark:bg-navy-900 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-800 hover:border-accent-blue/50" data-tab="remittance" id="tab-remittance">
+                        <i class="fas fa-globe"></i> Cross-Border Remittances
+                    </button>
+                    <button class="use-case-tab px-6 py-3 rounded-full font-semibold text-sm border transition-all flex items-center gap-2 bg-white dark:bg-navy-900 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-800 hover:border-accent-blue/50" data-tab="crypto" id="tab-crypto">
+                        <i class="fas fa-coins"></i> Crypto & DeFi
+                    </button>
+                    <button class="use-case-tab px-6 py-3 rounded-full font-semibold text-sm border transition-all flex items-center gap-2 bg-white dark:bg-navy-900 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-800 hover:border-accent-blue/50" data-tab="lending" id="tab-lending">
+                        <i class="fas fa-hand-holding-usd"></i> BNPL & Lending
+                    </button>
+                    <button class="use-case-tab px-6 py-3 rounded-full font-semibold text-sm border transition-all flex items-center gap-2 bg-white dark:bg-navy-900 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-800 hover:border-accent-blue/50" data-tab="marketplace" id="tab-marketplace">
+                        <i class="fas fa-store"></i> Marketplaces & KYB
+                    </button>
+                </div>
+
+                <!-- Tab Contents -->
+                <div class="max-w-5xl mx-auto">
+                    <!-- Tab: NeoBanking -->
+                    <div class="use-case-content block" id="use-case-neobank">
+                        <div class="glass-panel p-8 md:p-12 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-navy-900 shadow-xl grid lg:grid-cols-12 gap-8 items-center">
+                            <div class="lg:col-span-7 space-y-6">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-accent-blue text-xs font-semibold">
+                                    <i class="fas fa-university"></i> NeoBanks & Digital Wallets
+                                </div>
+                                <h3 class="text-2xl md:text-3xl font-bold dark:text-white">High-Speed Consumer Onboarding</h3>
+                                <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm md:text-base">
+                                    Digital banks lose up to 40% of signups during identity checks. I design automated KYC workflows that run document extraction and biometric face match in parallel, completing checks in <span class="text-accent-blue font-bold">under 5 seconds</span>. If a check is borderline, it is routed to a custom manual review console rather than being auto-rejected, protecting conversion.
+                                </p>
+                                <div class="grid grid-cols-2 gap-4 pt-2">
+                                    <div class="p-4 rounded-xl bg-gray-50 dark:bg-navy-800/50 border border-gray-100 dark:border-gray-700">
+                                        <div class="text-xs text-gray-500 font-medium">ONBOARDING TIME</div>
+                                        <div class="text-xl font-bold text-accent-blue">Reduced by 85%</div>
+                                    </div>
+                                    <div class="p-4 rounded-xl bg-gray-50 dark:bg-navy-800/50 border border-gray-100 dark:border-gray-700">
+                                        <div class="text-xs text-gray-500 font-medium">DROP-OFF RATE</div>
+                                        <div class="text-xl font-bold text-accent-emerald">Decreased by 30%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-5 bg-navy-900 rounded-2xl p-6 border border-gray-800 text-white font-mono text-xs overflow-x-auto shadow-inner">
+                                <div class="text-gray-500 mb-2">// Onboarding Decision Pipeline</div>
+                                <div><span class="text-purple-400">const</span> status = <span class="text-purple-400">await</span> kycEngine.verify({</div>
+                                <div class="pl-4">userId: <span class="text-green-400">"usr_88291"</span>,</div>
+                                <div class="pl-4">docType: <span class="text-green-400">"PASSPORT"</span>,</div>
+                                <div class="pl-4">livenessLevel: <span class="text-green-400">"HIGH_ASSURANCE"</span></div>
+                                <div>});</div>
+                                <div class="mt-4 text-emerald-400">// Output Response</div>
+                                <div class="text-gray-300">{</div>
+                                <div class="pl-4">"decision": <span class="text-green-400">"APPROVE"</span>,</div>
+                                <div class="pl-4">"confidence": <span class="text-yellow-300">0.994</span>,</div>
+                                <div class="pl-4">"checks_run": [<span class="text-green-400">"mrz"</span>, <span class="text-green-400">"face_match"</span>, <span class="text-green-400">"pep"</span>]</div>
+                                <div class="text-gray-300">}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab: Remittance -->
+                    <div class="use-case-content hidden" id="use-case-remittance">
+                        <div class="glass-panel p-8 md:p-12 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-navy-900 shadow-xl grid lg:grid-cols-12 gap-8 items-center">
+                            <div class="lg:col-span-7 space-y-6">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-900/30 text-accent-emerald text-xs font-semibold">
+                                    <i class="fas fa-globe"></i> International Transfers
+                                </div>
+                                <h3 class="text-2xl md:text-3xl font-bold dark:text-white">Real-Time Transfer Limit & Velocity Rules</h3>
+                                <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm md:text-base">
+                                    Cross-border payments require active monitoring to prevent smurfing (splitting large transfers into small transactions). I construct custom transaction monitors that track sliding-window velocity (e.g. cumulative daily/weekly limits) and automatically apply step-up restrictions or hold transfers for review if suspicious patterns are detected.
+                                </p>
+                                <div class="grid grid-cols-2 gap-4 pt-2">
+                                    <div class="p-4 rounded-xl bg-gray-50 dark:bg-navy-800/50 border border-gray-100 dark:border-gray-700">
+                                        <div class="text-xs text-gray-500 font-medium">FALSE ALERTS</div>
+                                        <div class="text-xl font-bold text-accent-emerald">Reduced by 65%</div>
+                                    </div>
+                                    <div class="p-4 rounded-xl bg-gray-50 dark:bg-navy-800/50 border border-gray-100 dark:border-gray-700">
+                                        <div class="text-xs text-gray-500 font-medium">COMPLIANCE COVERAGE</div>
+                                        <div class="text-xl font-bold text-accent-blue">100% FATF Aligned</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-5 bg-navy-900 rounded-2xl p-6 border border-gray-800 text-white font-mono text-xs overflow-x-auto shadow-inner">
+                                <div class="text-gray-500 mb-2">// sliding window transaction checker</div>
+                                <div><span class="text-purple-400">const</span> velocity = <span class="text-purple-400">await</span> tracker.getVelocity({</div>
+                                <div class="pl-4">userId: <span class="text-green-400">"usr_88291"</span>,</div>
+                                <div class="pl-4">window: <span class="text-green-400">"24h"</span></div>
+                                <div>});</div>
+                                <div class="mt-4"><span class="text-purple-400">if</span> (velocity.amount &gt; 3000) {</div>
+                                <div class="pl-4 text-orange-400">triggerStepUpAuthentication();</div>
+                                <div>}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab: Crypto -->
+                    <div class="use-case-content hidden" id="use-case-crypto">
+                        <div class="glass-panel p-8 md:p-12 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-navy-900 shadow-xl grid lg:grid-cols-12 gap-8 items-center">
+                            <div class="lg:col-span-7 space-y-6">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 dark:bg-purple-900/30 text-purple-500 text-xs font-semibold">
+                                    <i class="fas fa-coins"></i> Web3 / DeFi / Exchanges
+                                </div>
+                                <h3 class="text-2xl md:text-3xl font-bold dark:text-white">Fiat On-Ramp Wallet Screening</h3>
+                                <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm md:text-base">
+                                    Fiat on-ramps are major targets for fraud and money laundering. I integrate traditional KYC verification with on-chain address screening tools. Incoming deposit addresses are checked for ties to darknet markets, sanctioned wallets (e.g. Tornado Cash), or known hacks before transaction clearance, shielding the exchange from liability.
+                                </p>
+                                <div class="grid grid-cols-2 gap-4 pt-2">
+                                    <div class="p-4 rounded-xl bg-gray-50 dark:bg-navy-800/50 border border-gray-100 dark:border-gray-700">
+                                        <div class="text-xs text-gray-500 font-medium">SCREENING LATENCY</div>
+                                        <div class="text-xl font-bold text-accent-blue">&lt; 150ms Integration</div>
+                                    </div>
+                                    <div class="p-4 rounded-xl bg-gray-50 dark:bg-navy-800/50 border border-gray-100 dark:border-gray-700">
+                                        <div class="text-xs text-gray-500 font-medium">SANCTION BLOCKING</div>
+                                        <div class="text-xl font-bold text-red-500">100% Automated</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-5 bg-navy-900 rounded-2xl p-6 border border-gray-800 text-white font-mono text-xs overflow-x-auto shadow-inner">
+                                <div class="text-gray-500 mb-2">// Blockchain Screening Call</div>
+                                <div><span class="text-purple-400">const</span> rating = <span class="text-purple-400">await</span> walletShield.screen({</div>
+                                <div class="pl-4">address: <span class="text-green-400">"0x71C...3a"</span>,</div>
+                                <div class="pl-4">chain: <span class="text-green-400">"ethereum"</span></div>
+                                <div>});</div>
+                                <div class="mt-4"><span class="text-purple-400">if</span> (rating.riskScore &gt; <span class="text-yellow-300">0.8</span>) {</div>
+                                <div class="pl-4 text-red-400">blockDeposit("Sanctioned source");</div>
+                                <div>}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab: Lending -->
+                    <div class="use-case-content hidden" id="use-case-lending">
+                        <div class="glass-panel p-8 md:p-12 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-navy-900 shadow-xl grid lg:grid-cols-12 gap-8 items-center">
+                            <div class="lg:col-span-7 space-y-6">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 dark:bg-orange-900/30 text-orange-500 text-xs font-semibold">
+                                    <i class="fas fa-hand-holding-usd"></i> Consumer Credit & BNPL
+                                </div>
+                                <h3 class="text-2xl md:text-3xl font-bold dark:text-white">Preventing Automated Loan Fraud</h3>
+                                <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm md:text-base">
+                                    Lending platforms are frequently attacked by botnets generating hundreds of fake profiles. I set up multi-signal defensive structures: analyzing device fingerprinting (hardware hashes, canvas rendering), email address creation age, and proxy/VPN networks. This immediately filters out synthetic identities before they run costly credit queries.
+                                </p>
+                                <div class="grid grid-cols-2 gap-4 pt-2">
+                                    <div class="p-4 rounded-xl bg-gray-50 dark:bg-navy-800/50 border border-gray-100 dark:border-gray-700">
+                                        <div class="text-xs text-gray-500 font-medium">SYNTHETIC IDENTITY DETECT</div>
+                                        <div class="text-xl font-bold text-accent-emerald">99.2% Accuracy</div>
+                                    </div>
+                                    <div class="p-4 rounded-xl bg-gray-50 dark:bg-navy-800/50 border border-gray-100 dark:border-gray-700">
+                                        <div class="text-xs text-gray-500 font-medium">API QUERY SAVINGS</div>
+                                        <div class="text-xl font-bold text-accent-blue">$40k+/yr Saved</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-5 bg-navy-900 rounded-2xl p-6 border border-gray-800 text-white font-mono text-xs overflow-x-auto shadow-inner">
+                                <div class="text-gray-500 mb-2">// Multi-Signal Fraud Defense</div>
+                                <div><span class="text-purple-400">const</span> risk = <span class="text-purple-400">await</span> fraudShield.evaluate({</div>
+                                <div class="pl-4">deviceHash: <span class="text-green-400">"dev_92c10a"</span>,</div>
+                                <div class="pl-4">vpnDetected: <span class="text-purple-400">true</span>,</div>
+                                <div class="pl-4">emailAgeDays: <span class="text-yellow-300">2</span></div>
+                                <div>});</div>
+                                <div class="mt-4"><span class="text-purple-400">if</span> (risk.isSynthetic) {</div>
+                                <div class="pl-4 text-red-400">rejectLoanApplication();</div>
+                                <div>}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab: Marketplace -->
+                    <div class="use-case-content hidden" id="use-case-marketplace">
+                        <div class="glass-panel p-8 md:p-12 rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-navy-900 shadow-xl grid lg:grid-cols-12 gap-8 items-center">
+                            <div class="lg:col-span-7 space-y-6">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 dark:bg-navy-800 text-gray-600 dark:text-gray-400 text-xs font-semibold">
+                                    <i class="fas fa-store"></i> Two-Sided Marketplaces
+                                </div>
+                                <h3 class="text-2xl md:text-3xl font-bold dark:text-white">UBO Tracing & KYB Automation</h3>
+                                <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm md:text-base">
+                                    Onboarding corporate sellers manually takes days. I design KYB automated engines that check state registers (e.g. SEC/Companies House), extract corporate ownership trees, identify Ultimate Beneficial Owners (UBOs) holding &gt;25% shares, and run AML/sanctions checks against them automatically.
+                                </p>
+                                <div class="grid grid-cols-2 gap-4 pt-2">
+                                    <div class="p-4 rounded-xl bg-gray-50 dark:bg-navy-800/50 border border-gray-100 dark:border-gray-700">
+                                        <div class="text-xs text-gray-500 font-medium">KYB MERCHANT ONBOARD</div>
+                                        <div class="text-xl font-bold text-accent-blue">Done in 2 Hours</div>
+                                    </div>
+                                    <div class="p-4 rounded-xl bg-gray-50 dark:bg-navy-800/50 border border-gray-100 dark:border-gray-700">
+                                        <div class="text-xs text-gray-500 font-medium">MANUAL WORKLOAD</div>
+                                        <div class="text-xl font-bold text-accent-emerald">Reduced by 90%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-5 bg-navy-900 rounded-2xl p-6 border border-gray-800 text-white font-mono text-xs overflow-x-auto shadow-inner">
+                                <div class="text-gray-500 mb-2">// Automated KYB Corporate Search</div>
+                                <div><span class="text-purple-400">const</span> kybResult = <span class="text-purple-400">await</span> registry.search({</div>
+                                <div class="pl-4">companyId: <span class="text-green-400">"10298192"</span>,</div>
+                                <div class="pl-4">jurisdiction: <span class="text-green-400">"UK"</span></div>
+                                <div>});</div>
+                                <div class="mt-4"><span class="text-purple-400">const</span> ubos = kybResult.getUbos({ thresholdPercent: <span class="text-yellow-300">25</span> });</div>
+                                <div>ubos.forEach(ubo =&gt; runSanctionCheck(ubo));</div>
                             </div>
                         </div>
                     </div>
@@ -415,7 +675,7 @@
                     <div class="bg-navy-900 rounded-[22px] p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
                         <div class="md:w-2/3 text-center md:text-left">
                             <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-4">Migrate without the headache</h2>
-                            <p class="text-gray-300 text-lg">Our dedicated implementation team will help migrate your existing compliance data and set up custom workflows in less than 14 days.</p>
+                            <p class="text-gray-300 text-lg">I will directly help you migrate your existing compliance data and set up custom workflows in less than 14 days.</p>
                         </div>
                         <div class="md:w-1/3 flex justify-center md:justify-end w-full">
                             <a href="contact.html" class="bg-white text-navy-900 px-8 py-4 rounded-full font-bold text-lg hover:scale-105 hover:text-accent-blue hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] transition-all duration-300 shadow-xl w-full md:w-auto text-center block">Talk to an Expert</a>
@@ -428,15 +688,14 @@
 
     <!-- Footer (Same as index.html) -->
     <footer class="bg-white dark:bg-dark border-t border-gray-200 dark:border-gray-800 pt-20 pb-10">
-        <!-- ... Footer content matching index.html ... -->
         <div class="container mx-auto px-4 md:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
                 <div class="lg:col-span-4">
                     <a href="index.html" class="flex items-center gap-2 mb-6">
-                        <div class="w-8 h-8 rounded-lg bg-gradient-accent flex items-center justify-center text-white font-bold text-xl shadow-lg">C</div>
+                        <div class="w-8 h-8 rounded-lg bg-gradient-accent flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-accent-blue/30">C</div>
                         <span class="font-heading font-bold text-xl tracking-tight dark:text-white">CompliTech</span>
                     </a>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-8 max-w-sm">Enterprise-grade compliance automation consulting for modern FinTech companies. We build scalable regulatory infrastructure.</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-8 max-w-sm">Bespoke compliance automation and advisory for high-growth FinTechs. Build and scale regulatory infrastructure without friction.</p>
                     <div class="flex gap-4">
                         <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-navy-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-accent-blue dark:hover:bg-accent-blue hover:text-white dark:hover:text-white hover:-translate-y-1.5 hover:shadow-lg hover:shadow-accent-blue/30 transition-all duration-300 shadow-sm"><i class="fab fa-x-twitter"></i></a>
                         <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-navy-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-accent-blue dark:hover:bg-accent-blue hover:text-white dark:hover:text-white hover:-translate-y-1.5 hover:shadow-lg hover:shadow-accent-blue/30 transition-all duration-300 shadow-sm"><i class="fab fa-linkedin-in"></i></a>
@@ -445,22 +704,22 @@
                 </div>
                 
                 <div class="lg:col-span-2">
-                    <h4 class="font-bold mb-6 dark:text-white text-lg">Solutions</h4>
+                    <h4 class="font-bold mb-6 dark:text-white text-lg">Specialties</h4>
                     <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400 font-medium">
-                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">KYC Automation</a></li>
-                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">AML Monitoring</a></li>
-                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">Fraud Prevention</a></li>
-                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">Risk API</a></li>
+                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">KYC Pipelines</a></li>
+                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">AML Rule Systems</a></li>
+                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">Fraud Shielding</a></li>
+                        <li><a href="services.html" class="hover:text-accent-blue transition-colors block">Risk Architecture</a></li>
                     </ul>
                 </div>
                 
                 <div class="lg:col-span-2">
-                    <h4 class="font-bold mb-6 dark:text-white text-lg">Company</h4>
+                    <h4 class="font-bold mb-6 dark:text-white text-lg">Consulting</h4>
                     <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400 font-medium">
-                        <li><a href="about.html" class="hover:text-accent-blue transition-colors block">About Us</a></li>
-                        <li><a href="blog.html" class="hover:text-accent-blue transition-colors block">Insights Blog</a></li>
-                        <li><a href="pricing.html" class="hover:text-accent-blue transition-colors block">Pricing Plans</a></li>
-                        <li><a href="contact.html" class="hover:text-accent-blue transition-colors block">Contact Sales</a></li>
+                        <li><a href="about.html" class="hover:text-accent-blue transition-colors block">About Marcus</a></li>
+                        <li><a href="blog.html" class="hover:text-accent-blue transition-colors block">Compliance Blog</a></li>
+                        <li><a href="pricing.html" class="hover:text-accent-blue transition-colors block">Engagement Models</a></li>
+                        <li><a href="contact.html" class="hover:text-accent-blue transition-colors block">Book Consultation</a></li>
                     </ul>
                 </div>
                 
@@ -468,14 +727,14 @@
                     <h4 class="font-bold mb-6 dark:text-white text-lg">Subscribe to Updates</h4>
                     <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">Get the latest insights on FinTech compliance and regulatory changes directly to your inbox.</p>
                     <form class="flex mt-2 shadow-sm rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 focus-within:ring-2 ring-accent-blue focus-within:border-transparent transition-all">
-                        <input type="email" placeholder="Enter your business email" class="w-full px-4 py-3 bg-gray-50 dark:bg-navy-900/50 border-none focus:outline-none text-sm dark:text-white placeholder-gray-400" required>
+                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-3 bg-gray-50 dark:bg-navy-900/50 border-none focus:outline-none text-sm dark:text-white placeholder-gray-400" required>
                         <button type="submit" class="bg-navy-900 dark:bg-accent-blue text-white px-6 py-3 font-semibold hover:bg-gray-800 dark:hover:bg-blue-600 transition-colors">Subscribe</button>
                     </form>
                 </div>
             </div>
             
             <div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500 font-medium">
-                <p>&copy; 2026 CompliTech Consulting. All rights reserved.</p>
+                <p>&copy; 2026 Marcus Thorne. All rights reserved.</p>
                 <div class="flex gap-6">
                     <a href="#" class="hover:text-accent-blue transition-colors">Privacy Policy</a>
                     <a href="#" class="hover:text-accent-blue transition-colors">Terms of Service</a>
@@ -486,6 +745,41 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        // Use Case Tabs Switcher Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.use-case-tab');
+            const contents = document.querySelectorAll('.use-case-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active from all tabs
+                    tabs.forEach(t => {
+                        t.classList.remove('active', 'bg-accent-blue', 'text-white', 'border-accent-blue');
+                        t.classList.add('bg-white', 'dark:bg-navy-900', 'text-gray-600', 'dark:text-gray-400', 'border-gray-200', 'dark:border-gray-800');
+                    });
+
+                    // Add active to selected tab
+                    tab.classList.add('active', 'bg-accent-blue', 'text-white', 'border-accent-blue');
+                    tab.classList.remove('bg-white', 'dark:bg-navy-900', 'text-gray-600', 'dark:text-gray-400', 'border-gray-200', 'dark:border-gray-800');
+
+                    // Hide all contents
+                    contents.forEach(content => {
+                        content.classList.add('hidden');
+                        content.classList.remove('block');
+                    });
+
+                    // Show target content
+                    const targetId = `use-case-${tab.dataset.tab}`;
+                    const targetContent = document.getElementById(targetId);
+                    if (targetContent) {
+                        targetContent.classList.remove('hidden');
+                        targetContent.classList.add('block');
+                    }
+                });
+            });
+        });
+    </script>
 
     <!-- Back to Top -->
     <div id="back-to-top">
