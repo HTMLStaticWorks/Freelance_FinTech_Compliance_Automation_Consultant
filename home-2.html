@@ -52,7 +52,7 @@
                 </a>
 
                 <!-- Desktop Nav -->
-                <nav class="hidden lg:flex items-center gap-6 font-medium text-sm">
+                <nav class="hidden xl:flex items-center gap-6 font-medium text-sm">
                     <!-- Home Dropdown -->
                     <div class="relative group">
                         <button class="flex items-center gap-1 text-accent-blue font-semibold transition-colors text-sm py-2">
@@ -67,18 +67,18 @@
                     <a href="contact.html" class="hover:text-accent-blue transition-colors">Contact</a>
                 </nav>
 
-                <div class="hidden lg:flex items-center gap-4">
+                <div class="hidden xl:flex items-center gap-4">
                     <button id="rtl-toggle" class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm hover:bg-gray-200 dark:hover:bg-navy-800 transition-colors" aria-label="Toggle RTL Mode"><span id="rtl-icon">RTL</span></button>
                     <button id="theme-toggle" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-navy-800 transition-colors" aria-label="Toggle Dark Mode">
                         <i id="theme-icon" class="fas fa-moon text-lg"></i>
                     </button>
-                    <a href="login.html" class="bg-gradient-accent text-white px-4 py-2 rounded-full font-semibold text-sm hover-glow transition-all btn-hover-lift shadow-lg shadow-accent-blue/20">Login</a>
-                    <a href="dashboard.html" class="bg-accent-blue text-white hover:bg-blue-600 px-4 py-2 rounded-full font-semibold text-sm hover-glow transition-all btn-hover-lift">Dashboard</a>
-                    <a href="contact.html" class="bg-white text-navy-900 px-6 py-2.5 rounded-full font-semibold text-sm hover-glow transition-all btn-hover-lift">Book a Call</a>
+                    <a href="login.html" class="bg-gradient-accent text-white w-32 text-center py-2.5 rounded-full font-semibold text-sm hover-glow transition-all btn-hover-lift shadow-lg shadow-accent-blue/20">Login</a>
+                    <a href="dashboard.html" class="bg-accent-blue text-white hover:bg-blue-600 w-32 text-center py-2.5 rounded-full font-semibold text-sm hover-glow transition-all btn-hover-lift">Dashboard</a>
+                    <a href="contact.html" class="bg-white text-navy-900 w-32 text-center py-2.5 rounded-full font-semibold text-sm hover-glow transition-all btn-hover-lift">Book a Call</a>
                 </div>
 
                 <!-- Mobile Toggle -->
-                <div class="flex items-center gap-2 lg:hidden">
+                <div class="flex items-center gap-2 xl:hidden">
                     <button id="rtl-toggle-tablet" class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs hover:bg-gray-200 dark:hover:bg-navy-800 transition-colors" aria-label="Toggle RTL Mode"><span id="rtl-icon-tablet">RTL</span></button>
                     <button id="theme-toggle-tablet" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-navy-800 transition-colors" aria-label="Toggle Dark Mode">
                         <i id="theme-icon-tablet" class="fas fa-moon text-lg"></i>
@@ -91,7 +91,7 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-white dark:bg-navy-900 border-t border-gray-200 dark:border-gray-800 p-4 flex flex-col gap-4 shadow-xl text-gray-800 dark:text-gray-200 text-center">
+        <div id="mobile-menu" class="hidden xl:hidden absolute top-full left-0 w-full bg-white dark:bg-navy-900 border-t border-gray-200 dark:border-gray-800 p-4 flex flex-col gap-4 shadow-xl text-gray-800 dark:text-gray-200 text-center">
             <a href="index.html" class="hover:text-accent-blue transition-colors block py-2">Home 1</a>
             <a href="home-2.html" class="text-accent-blue font-semibold transition-colors block py-2">Home 2</a>
             <a href="about.html" class="hover:text-accent-blue transition-colors block py-2">About</a>
@@ -108,7 +108,7 @@
 
     <main>
         <!-- SECTION 1: SaaS Hero Section -->
-        <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 bg-navy-900 overflow-hidden text-center">
+        <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 bg-navy-900 overflow-hidden text-center rtl:text-right">
             <!-- Background Image with Overlay -->
             <div class="absolute inset-0 z-0">
                 <img src="fintech_saas_hero_bg.png" alt="Background" class="w-full h-full object-cover">
@@ -117,14 +117,14 @@
             
             <div class="container mx-auto px-8 sm:px-10 md:px-16 lg:px-20 relative z-10">
                 <span class="inline-block py-1.5 px-4 rounded-full bg-white/10 text-emerald-400 text-sm font-semibold mb-6 border border-white/20 backdrop-blur-md">Platform v2.0 is Live</span>
-                <h1 class="text-4xl md:text-5xl lg:text-7xl font-heading font-extrabold text-white mb-6 max-w-4xl mx-auto leading-tight">
+                <h1 class="text-4xl md:text-5xl lg:text-7xl font-heading font-extrabold text-white mb-6 max-w-4xl mx-auto rtl:mr-0 leading-tight">
                     The Complete Engine for <br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">FinTech Compliance</span>
                 </h1>
-                <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light">
+                <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto rtl:mr-0 font-light">
                     One platform to orchestrate KYC, AML, and risk decisioning. Integrate via API in days, not months.
                 </p>
-                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-16 px-4">
+                <div class="flex flex-col sm:flex-row justify-center rtl:justify-end items-center gap-4 mb-16 px-4">
                     <a href="contact.html" class="w-full sm:w-auto bg-accent-blue hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg shadow-blue-500/30">Start Free Trial</a>
                     <a href="#api" class="w-full sm:w-auto glass-panel text-white px-8 py-4 rounded-full font-bold transition-all hover:bg-white/10 border border-white/20">Read API Docs</a>
                 </div>

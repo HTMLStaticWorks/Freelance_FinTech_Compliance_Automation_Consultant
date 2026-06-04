@@ -62,7 +62,7 @@
                 </a>
 
                 <!-- Desktop Nav -->
-                <nav class="hidden lg:flex items-center gap-6 font-medium text-sm">
+                <nav class="hidden xl:flex items-center gap-6 font-medium text-sm">
                     <!-- Home Dropdown -->
                     <div class="relative group">
                         <button class="flex items-center gap-1 text-accent-blue font-semibold transition-colors text-sm py-2">
@@ -77,18 +77,18 @@
                     <a href="contact.html" class="hover:text-accent-blue transition-colors">Contact</a>
                 </nav>
 
-                <div class="hidden lg:flex items-center gap-4">
+                <div class="hidden xl:flex items-center gap-4">
                     <button id="rtl-toggle" class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm hover:bg-gray-200 dark:hover:bg-navy-800 transition-colors" aria-label="Toggle RTL Mode"><span id="rtl-icon">RTL</span></button>
                     <button id="theme-toggle" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-navy-800 transition-colors" aria-label="Toggle Dark Mode">
                         <i id="theme-icon" class="fas fa-moon text-lg"></i>
                     </button>
-                    <a href="login.html" class="bg-gradient-accent text-white px-4 py-2 rounded-full font-semibold text-sm hover-glow transition-all btn-hover-lift shadow-lg shadow-accent-blue/20">Login</a>
-                    <a href="dashboard.html" class="bg-accent-blue text-white hover:bg-blue-600 px-4 py-2 rounded-full font-semibold text-sm hover-glow transition-all btn-hover-lift">Dashboard</a>
-                    <a href="contact.html" class="bg-navy-900 dark:bg-white text-white dark:text-navy-900 px-6 py-2.5 rounded-full font-semibold text-sm hover-glow transition-all btn-hover-lift">Book a Call</a>
+                    <a href="login.html" class="bg-gradient-accent text-white w-32 text-center py-2.5 rounded-full font-semibold text-sm hover-glow transition-all btn-hover-lift shadow-lg shadow-accent-blue/20">Login</a>
+                    <a href="dashboard.html" class="bg-accent-blue text-white hover:bg-blue-600 w-32 text-center py-2.5 rounded-full font-semibold text-sm hover-glow transition-all btn-hover-lift">Dashboard</a>
+                    <a href="contact.html" class="bg-navy-900 dark:bg-white text-white dark:text-navy-900 w-32 text-center py-2.5 rounded-full font-semibold text-sm hover-glow transition-all btn-hover-lift">Book a Call</a>
                 </div>
 
                 <!-- Mobile Toggle -->
-                <div class="flex items-center gap-2 lg:hidden">
+                <div class="flex items-center gap-2 xl:hidden">
                     <button id="rtl-toggle-tablet" class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs hover:bg-gray-200 dark:hover:bg-navy-800 transition-colors" aria-label="Toggle RTL Mode"><span id="rtl-icon-tablet">RTL</span></button>
                     <button id="theme-toggle-tablet" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-navy-800 transition-colors" aria-label="Toggle Dark Mode">
                         <i id="theme-icon-tablet" class="fas fa-moon text-lg"></i>
@@ -101,7 +101,7 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-white dark:bg-navy-900 border-t border-gray-200 dark:border-gray-800 p-4 flex flex-col gap-4 shadow-xl text-gray-800 dark:text-gray-200 text-center">
+        <div id="mobile-menu" class="hidden xl:hidden absolute top-full left-0 w-full bg-white dark:bg-navy-900 border-t border-gray-200 dark:border-gray-800 p-4 flex flex-col gap-4 shadow-xl text-gray-800 dark:text-gray-200 text-center">
             <a href="index.html" class="text-accent-blue font-semibold transition-colors block py-2">Home 1</a>
             <a href="home-2.html" class="hover:text-accent-blue transition-colors block py-2">Home 2</a>
             <a href="about.html" class="hover:text-accent-blue transition-colors block py-2">About</a>
@@ -120,13 +120,19 @@
     <main>
         <!-- SECTION 1: Hero Section -->
         <section class="relative pt-20 pb-20 lg:pt-36 lg:pb-32 overflow-hidden">
-            <!-- Background elements -->
-            <div class="absolute top-0 right-0 -mr-32 -mt-32 w-[500px] h-[500px] bg-accent-blue opacity-10 dark:opacity-20 blur-[100px] rounded-full pointer-events-none"></div>
-            <div class="absolute bottom-0 left-0 -ml-32 -mb-32 w-[400px] h-[400px] bg-accent-emerald opacity-10 dark:opacity-20 blur-[100px] rounded-full pointer-events-none"></div>
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0 pointer-events-none">
+                <img src="hero_bg_home1.png" alt="" class="w-full h-full object-cover object-center" aria-hidden="true">
+                <!-- Dark gradient overlay for readability -->
+                <div class="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-white/30 dark:from-navy-900/95 dark:via-navy-900/80 dark:to-navy-900/40"></div>
+            </div>
+            <!-- Accent glow overlays -->
+            <div class="absolute top-0 right-0 -mr-32 -mt-32 w-[500px] h-[500px] bg-accent-blue opacity-10 dark:opacity-20 blur-[100px] rounded-full pointer-events-none z-0"></div>
+            <div class="absolute bottom-0 left-0 -ml-32 -mb-32 w-[400px] h-[400px] bg-accent-emerald opacity-10 dark:opacity-20 blur-[100px] rounded-full pointer-events-none z-0"></div>
 
             <div class="container mx-auto px-8 sm:px-10 md:px-16 lg:px-20 relative z-10">
                 <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                    <div class="max-w-2xl order-2 lg:order-1 text-center lg:text-left mx-auto lg:mx-0">
+                    <div class="max-w-2xl text-center lg:text-start mx-auto lg:mx-0">
                         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-sm font-semibold mb-6 border border-accent-blue/20 text-accent-blue shadow-sm">
                             <span class="w-2 h-2 rounded-full bg-accent-emerald animate-pulse"></span>
                             Bespoke Compliance Automation
@@ -154,7 +160,7 @@
                     </div>
 
                     <!-- Animated Dashboard Preview -->
-                    <div class="relative w-full aspect-square lg:aspect-auto lg:h-[600px] flex items-center justify-center animate-float perspective-1000 order-1 lg:order-2">
+                    <div class="relative w-full aspect-square lg:aspect-auto lg:h-[600px] flex items-center justify-center animate-float perspective-1000">
                         <!-- Decorative circle behind -->
                         <div class="absolute inset-0 bg-gradient-to-tr from-accent-blue to-accent-emerald rounded-full opacity-10 blur-3xl scale-90"></div>
                         

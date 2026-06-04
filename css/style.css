@@ -89,47 +89,46 @@ p.font-extrabold,
               background-color 0.3s ease;
 }
 
-/* Premium card transition wrappers */
-.bg-white.rounded-2xl.border,
-.dark .bg-navy-900.rounded-2xl.border {
+.bg-white.rounded-2xl.border:not(.font-mono),
+.dark .bg-navy-900.rounded-2xl.border:not(.font-mono) {
   transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
               box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
               border-color 0.3s ease, 
               background-color 0.3s ease;
 }
 
-/* Global Card Text Centering (excluding no-hover static layouts) */
-.glass-panel:not(.no-hover),
-.bg-white.rounded-2xl.border:not(.no-hover),
-.dark .bg-navy-900.rounded-2xl.border:not(.no-hover) {
+/* Global Card Text Centering (excluding no-hover static layouts and code blocks) */
+.glass-panel:not(.no-hover):not(.font-mono),
+.bg-white.rounded-2xl.border:not(.no-hover):not(.font-mono),
+.dark .bg-navy-900.rounded-2xl.border:not(.no-hover):not(.font-mono) {
   text-align: center !important;
 }
 
 /* Center sub-components and lists within cards */
-.glass-panel:not(.no-hover) ul,
-.bg-white.rounded-2xl.border:not(.no-hover) ul,
-.dark .bg-navy-900.rounded-2xl.border:not(.no-hover) ul {
+.glass-panel:not(.no-hover):not(.font-mono) ul,
+.bg-white.rounded-2xl.border:not(.no-hover):not(.font-mono) ul,
+.dark .bg-navy-900.rounded-2xl.border:not(.no-hover):not(.font-mono) ul {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  margin: 0 auto;
+  margin: 0 auto 2rem auto;
 }
 
 /* Center flex layouts (e.g. icons, items-center tags) horizontally in cards */
-.glass-panel:not(.no-hover) .flex.items-center.gap-4,
-.bg-white.rounded-2xl.border:not(.no-hover) .flex.items-center.gap-4,
-.dark .bg-navy-900.rounded-2xl.border:not(.no-hover) .flex.items-center.gap-4 {
+.glass-panel:not(.no-hover):not(.font-mono) .flex.items-center.gap-4,
+.bg-white.rounded-2xl.border:not(.no-hover):not(.font-mono) .flex.items-center.gap-4,
+.dark .bg-navy-900.rounded-2xl.border:not(.no-hover):not(.font-mono) .flex.items-center.gap-4 {
   justify-content: center;
 }
 
 /* Center block-level icons and profile pictures */
-.glass-panel:not(.no-hover) .w-12.h-12,
-.bg-white.rounded-2xl.border:not(.no-hover) .w-12.h-12,
-.dark .bg-navy-900.rounded-2xl.border:not(.no-hover) .w-12.h-12,
-.glass-panel:not(.no-hover) .w-16.h-16,
-.bg-white.rounded-2xl.border:not(.no-hover) .w-16.h-16,
-.dark .bg-navy-900.rounded-2xl.border:not(.no-hover) .w-16.h-16 {
+.glass-panel:not(.no-hover):not(.font-mono) .w-12.h-12,
+.bg-white.rounded-2xl.border:not(.no-hover):not(.font-mono) .w-12.h-12,
+.dark .bg-navy-900.rounded-2xl.border:not(.no-hover):not(.font-mono) .w-12.h-12,
+.glass-panel:not(.no-hover):not(.font-mono) .w-16.h-16,
+.bg-white.rounded-2xl.border:not(.no-hover):not(.font-mono) .w-16.h-16,
+.dark .bg-navy-900.rounded-2xl.border:not(.no-hover):not(.font-mono) .w-16.h-16 {
   margin-left: auto;
   margin-right: auto;
 }
@@ -148,9 +147,9 @@ p.font-extrabold,
 }
 
 /* Premium Card Hover State (Soft Lift + Colored Shadow Glow) */
-.glass-panel:hover:not(.no-hover),
-.bg-white.rounded-2xl.border:hover:not(.no-hover),
-.dark .bg-navy-900.rounded-2xl.border:hover:not(.no-hover) {
+.glass-panel:hover:not(.no-hover):not(.font-mono),
+.bg-white.rounded-2xl.border:hover:not(.no-hover):not(.font-mono),
+.dark .bg-navy-900.rounded-2xl.border:hover:not(.no-hover):not(.font-mono) {
   transform: translateY(-6px);
   box-shadow: 0 20px 40px rgba(58, 134, 255, 0.12), 
               0 1px 3px rgba(0, 0, 0, 0.05) !important;
@@ -158,9 +157,9 @@ p.font-extrabold,
   background-color: rgba(255, 255, 255, 0.85);
 }
 
-.dark .glass-panel:hover:not(.no-hover),
-.dark .bg-white.rounded-2xl.border:hover:not(.no-hover),
-.dark .bg-navy-900.rounded-2xl.border:hover:not(.no-hover) {
+.dark .glass-panel:hover:not(.no-hover):not(.font-mono),
+.dark .bg-white.rounded-2xl.border:hover:not(.no-hover):not(.font-mono),
+.dark .bg-navy-900.rounded-2xl.border:hover:not(.no-hover):not(.font-mono) {
   box-shadow: 0 20px 40px rgba(6, 214, 160, 0.08), 
               0 1px 3px rgba(0, 0, 0, 0.2) !important;
   border-color: rgba(6, 214, 160, 0.25) !important;
